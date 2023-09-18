@@ -1,21 +1,19 @@
 {
-  "marcadores": {
-    "marcador": [
-      {
-        "titulo": "Xunta",
-        "descripcion": "Portal educativo.",
-        "url": "https://www.edu.xunta.gal/"
-      },
-      {
-        "titulo": "Wikipedia",
-        "descripcion": "La enciclopedia libre.",
-        "url": "https://www.wikipedia.org/"
-      },
-      {
-        "titulo": "W3C",
-        "descripcion": "World Wide Web Consortium.",
-        "url": "https://www.w3.org/"
-      }
-    ]
-  }
+  "marcador": [
+    {
+      "titulo": "Xunta",
+      "descripcion": "Portal educativo.",
+      "url": "https://www.edu.xunta.gal/"
+    },
+    {
+      "titulo": "Wikipedia",
+      "descripcion": "La enciclopedia libre.",
+      "url": "https://www.wikipedia.org/"
+    },
+    {
+      "titulo": "W3C",
+      "descripcion": "World Wide Web Consortium.",
+      "url": "https://www.w3.org/"
+    }
+  ]
 }
