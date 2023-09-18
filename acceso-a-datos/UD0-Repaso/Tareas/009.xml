@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<marcadores>
+    <marcador>
+        <titulo>Xunta</titulo>
+        <descripcion>Portal educativo.</descripcion>
+        <url>https://www.edu.xunta.gal/</url>
+    </marcador>
+    <marcador>
+        <titulo>Wikipedia</titulo>
+        <descripcion>La enciclopedia libre.</descripcion>
+        <url>http://www.wikipedia.org/</url>
+    </marcador>
+    <marcador>
+        <titulo>W3C</titulo>
+        <descripcion>World Wide Web Consortium.</descripcion>
+        <url>https://www.w3.org/</url>
+    </marcador>
+</marcadores>
