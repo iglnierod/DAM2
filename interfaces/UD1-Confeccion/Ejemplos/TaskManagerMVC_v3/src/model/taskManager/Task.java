@@ -5,7 +5,6 @@
 package model.taskManager;
 
 /**
- *
  * @author iglesias_nieto_rodrigo
  */
 public class Task {
@@ -32,6 +31,6 @@ public class Task {
     public void setDone(boolean done) {
         this.done = done;
     }
-    
-    
+
+
 }
