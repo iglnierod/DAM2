@@ -6,7 +6,7 @@ import java.util.*;
 
 public class ComprobadorFichero {
     private File archivo;
-    private Map<String, byte[]> archivosSoportados;
+    private Map<String, String> archivosSoportados;
 
     public ComprobadorFichero() {
         archivo = new File("");
@@ -15,11 +15,11 @@ public class ComprobadorFichero {
     }
 
     private void setArchivosSoportados() {
-        archivosSoportados.put("pdf", "%PDF".getBytes());
-        archivosSoportados.put("zip", "PK\u0003".getBytes());
-        archivosSoportados.put("7z", "7z¼".getBytes());
-        archivosSoportados.put("rar", "Rar!".getBytes());
-        archivosSoportados.put("png", "‰PNG".getBytes());
+        archivosSoportados.put("pdf", "%PDF");
+        archivosSoportados.put("zip", "PK\u0003");
+        archivosSoportados.put("7z", "7z¼");
+        archivosSoportados.put("rar", "Rar!");
+        archivosSoportados.put("png", "‰PNG");
     }
 
     public Set<String> getArchivosSoportados() {
@@ -55,9 +55,24 @@ public class ComprobadorFichero {
 
     public void comprobarTipoFichero() {
         try (FileInputStream fis = new FileInputStream(archivo)) {
-            byte[] bytes = fis.readNBytes(5);
-            Set<String> bytesSoportados = archivosSoportados.keySet();
-            System.out.println(bytesSoportados);
+            byte[] bytes = fis.readNBytes(3);
+            char[] primerosBytes = new char[bytes.length];
+            for(int i = 0; i < primerosBytes.length; i++) {
+                primerosBytes[i] = (char) bytes[i];
+            }
+            String bytesString = String.valueOf(primerosBytes);
+            // BUSCAR LA KEY EN EL MAP
+            String tipoArchivo = null;
+            for (Map.Entry<String, String> entry : archivosSoportados.entrySet()) {
+                if (entry.getValue().contains(bytesString)) {
+                    tipoArchivo = entry.getKey();
+                    break;
+                }
+            }
+
+            if (tipoArchivo != null) {
+                System.out.println("El archivo es de tipo: " + tipoArchivo);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
