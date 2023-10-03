@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="051929b3-2627-438e-ad5c-e1df1cfd3e76" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2VcgQLkZduxTHhz7shhzhaZC3PS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/dam2_alu08/IdeaProjects/Ficheros/src/ej113",
+    "onboarding.tips.debug.path": "C:/Users/dam2_alu08/IdeaProjects/Ficheros/src/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dam2_alu08\IdeaProjects\Ficheros\src\ej113" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dam2_alu08\IdeaProjects\Ficheros\src\ej110" />
+      <recent name="C:\Users\dam2_alu08\IdeaProjects\Ficheros\src\ej110\dir\subdirectorio" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="CopiaFichero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ej109.CopiaFichero" />
+      <module name="Ficheros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ej109.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EscribirPeliculasXML" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ej113.EscribirPeliculasXML" />
+      <module name="Ficheros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ej113.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeerPeliculasXML" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ej112.LeerPeliculasXML" />
+      <module name="Ficheros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ej112.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ej114.Main" />
+      <module name="Ficheros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ej114.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MoverFichero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ej110.MoverFichero" />
+      <module name="Ficheros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ej110.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.EscribirPeliculasXML" />
+        <item itemvalue="Application.LeerPeliculasXML" />
+        <item itemvalue="Application.MoverFichero" />
+        <item itemvalue="Application.CopiaFichero" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="051929b3-2627-438e-ad5c-e1df1cfd3e76" name="Changes" comment="" />
+      <created>1695140767401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695140767401</updated>
+    </task>
+    <servers />
+  </component>
+</project>
