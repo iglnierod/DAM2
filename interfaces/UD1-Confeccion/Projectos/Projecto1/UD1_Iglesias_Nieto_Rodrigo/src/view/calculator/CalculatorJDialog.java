@@ -5,10 +5,6 @@
 package view.calculator;
 
 import java.awt.event.ActionListener;
-import javax.accessibility.AccessibleContext;
-import javax.swing.JButton;
-import javax.swing.JRootPane;
-import javax.swing.JTextField;
 
 /**
  *

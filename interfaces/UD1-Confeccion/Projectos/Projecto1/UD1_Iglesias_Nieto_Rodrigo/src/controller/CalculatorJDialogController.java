@@ -20,6 +20,7 @@ public class CalculatorJDialogController {
     private Float secondNumber = null;
     private String operator;
     private boolean decimalNumber;
+    private boolean lastPressedEquals;
 
     public CalculatorJDialogController(CalculatorJDialog view) {
         this.calculatorView = view;
@@ -77,6 +78,10 @@ public class CalculatorJDialogController {
     }
 
     private void saveOperator(String operator) {
+        if (lastPressedEquals == true) {
+            resetNumbers();
+        }
+        setLastPressedEquals(false);
         saveNumberFromDisplay();
         setDisplayToZero();
         this.operator = operator;
@@ -102,15 +107,20 @@ public class CalculatorJDialogController {
         Float number = Float.valueOf(calculatorView.getDisplayText());
         if (firstNumber == null && operator == null) {
             firstNumber = number;
+            System.out.println("firstNumber: " + firstNumber);
             return;
         }
-        secondNumber = number;
+        if (lastPressedEquals == false) {
+            System.out.println("secondNumber: " + secondNumber);
+            secondNumber = number;
+        }
     }
 
     private void resetNumbers() {
         firstNumber = null;
         secondNumber = null;
         operator = null;
+        setLastPressedEquals(false);
     }
 
     private void setDisplayToZero() {
@@ -127,6 +137,7 @@ public class CalculatorJDialogController {
         switch (operator) {
             case "+":
                 firstNumber = Calculator.add(firstNumber, secondNumber);
+                System.out.println(firstNumber + secondNumber + "");
                 break;
             case "-":
                 firstNumber = Calculator.substract(firstNumber, secondNumber);
@@ -138,9 +149,14 @@ public class CalculatorJDialogController {
                 firstNumber = Calculator.divide(firstNumber, secondNumber);
         }
         clearDisplay();
-        secondNumber = null;
-        updateCalculatorDisplay(String.valueOf(firstNumber));
+        updateCalculatorDisplay(firstNumber.toString());
+
         setDecimalNumber(false);
+        setLastPressedEquals(false);
+    }
+
+    private void setLastPressedEquals(boolean boo) {
+        lastPressedEquals = boo;
     }
 
     /* 
@@ -325,6 +341,7 @@ public class CalculatorJDialogController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 operate();
+                setLastPressedEquals(true);
             }
         };
         return al;
