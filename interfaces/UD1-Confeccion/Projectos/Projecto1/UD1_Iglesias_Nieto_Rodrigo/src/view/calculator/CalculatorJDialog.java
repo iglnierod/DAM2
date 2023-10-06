@@ -51,7 +51,7 @@ public class CalculatorJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         displayTextField.setEditable(false);
-        displayTextField.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
+        displayTextField.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         displayTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         displayTextField.setText("0");
 

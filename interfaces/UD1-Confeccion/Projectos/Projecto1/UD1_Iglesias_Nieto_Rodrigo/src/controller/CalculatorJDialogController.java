@@ -55,7 +55,6 @@ public class CalculatorJDialogController {
      */
     private void updateCalculatorDisplay(String newTxt) {
         String txt = calculatorView.getDisplayText();
-        System.out.println(txt);
         if (txt.equals("0")) {
             clearDisplay();
             calculatorView.updateDisplay(newTxt);
@@ -107,11 +106,9 @@ public class CalculatorJDialogController {
         Float number = Float.valueOf(calculatorView.getDisplayText());
         if (firstNumber == null && operator == null) {
             firstNumber = number;
-            System.out.println("firstNumber: " + firstNumber);
             return;
         }
         if (lastPressedEquals == false) {
-            System.out.println("secondNumber: " + secondNumber);
             secondNumber = number;
         }
     }
@@ -136,22 +133,35 @@ public class CalculatorJDialogController {
         }
         switch (operator) {
             case "+":
+                System.out.println("firstNumber: " + firstNumber);
+                System.out.println("secondNumber: " + secondNumber);
                 firstNumber = Calculator.add(firstNumber, secondNumber);
-                System.out.println(firstNumber + secondNumber + "");
                 break;
             case "-":
+                System.out.println("firstNumber: " + firstNumber);
+                System.out.println("secondNumber: " + secondNumber);
                 firstNumber = Calculator.substract(firstNumber, secondNumber);
                 break;
             case "*":
+                System.out.println("firstNumber: " + firstNumber);
+                System.out.println("secondNumber: " + secondNumber);
                 firstNumber = Calculator.multiply(firstNumber, secondNumber);
                 break;
             case "/":
+                System.out.println("firstNumber: " + firstNumber);
+                System.out.println("secondNumber: " + secondNumber);
                 firstNumber = Calculator.divide(firstNumber, secondNumber);
         }
+        System.out.println("result: " + firstNumber);
         clearDisplay();
-        updateCalculatorDisplay(firstNumber.toString());
-
-        setDecimalNumber(false);
+        String str = String.format("%.2f", firstNumber);
+        if(str.contains(".00")) {
+            str = str.substring(0, str.indexOf("."));
+            setDecimalNumber(false);
+        } else {
+            setDecimalNumber(true);
+        }
+        updateCalculatorDisplay(str.replace(",", "."));
         setLastPressedEquals(false);
     }
 

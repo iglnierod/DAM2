@@ -26,7 +26,7 @@ public class FrontJFrameController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.dispose();
+                System.exit(0);
             }
         };
         return al;

@@ -26,6 +26,6 @@ public class Calculator {
         if (b != 0) {
             return a / b;
         };
-        return 0f;
+        return -1f;
     }
 }
