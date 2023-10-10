@@ -9,13 +9,13 @@ import java.util.List;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class TaskList {
     private List<Task> tasks;
 
     public TaskList() {
-        this.tasks = new ArrayList<>();
+        this.tasks=new ArrayList<Task>();
     }
 
     public List<Task> getTasks() {
@@ -29,4 +29,5 @@ public class TaskList {
     public void addTask(Task task) {
         this.tasks.add(task);
     }
+    
 }

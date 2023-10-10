@@ -12,19 +12,18 @@ import view.taskManager.TaskManagerJDialog;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class FrontJFrameController {
 
-    private MainJFrame view = new MainJFrame();
+    private MainJFrame view;
     private TaskList taskListModel;
 
-    
     public FrontJFrameController(MainJFrame view, TaskList taskListModel) {
         this.view = view;
         this.taskListModel = taskListModel;
-        this.view.setQuitMenuItemListener(setQuitMenuItemActionListener());
-        this.view.setTaskManagerItemListener(setTaskManagerMenuItemActionListener());
+        this.view.setQuitMenuItemListener(this.setQuitMenuItemActionListener());
+        this.view.setTaskManagerMenuItemListener(this.setTaskManagerMenuItemActionListener());
     }
 
     private ActionListener setQuitMenuItemActionListener() {
@@ -44,8 +43,11 @@ public class FrontJFrameController {
                 TaskManagerJDialog tm = new TaskManagerJDialog(view, true);
                 TaskManagerController tmc = new TaskManagerController(taskListModel, tm);
                 tm.setVisible(true);
-            }
+            }   
+
         };
         return al;
+
     }
+
 }

@@ -14,27 +14,27 @@ import view.taskManager.TaskManagerJDialog;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class TaskManagerController {
 
     private final TaskList taskModel;
     private final TaskManagerJDialog taskView;
 
-    public TaskManagerController(TaskList taskModel, TaskManagerJDialog view) {
+    public TaskManagerController(TaskList taskModel, TaskManagerJDialog taskView) {
         this.taskModel = taskModel;
-        this.taskView = view;
-        this.taskView.addButtonActionListener(addTaskListener());
-        updateTaskListView();
+        this.taskView = taskView;
+        this.taskView.addButtonActionListener(this.AddTaskListener());
+        this.updateTaskListView();
     }
 
-    private ActionListener addTaskListener() {
+    private ActionListener AddTaskListener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("boton");
+                System.out.println("Add");
                 String description = taskView.getTaskDescription();
-                if(!description.isEmpty()) {
+                if (!description.isEmpty()) {
                     Task task = new Task(description);
                     taskModel.addTask(task);
                     updateTaskListView();
@@ -43,13 +43,14 @@ public class TaskManagerController {
         };
         return al;
     }
-    
+
     private void updateTaskListView() {
-        List<Task> tasks = this.taskModel.getTasks();
-        List<String> taskList = new ArrayList<>();
-        for(Task task : tasks) {
-            taskList.add(task.getDescription());
+        List<Task> tasks = taskModel.getTasks();
+        List<String> taskList = new ArrayList<String>();
+        for (Task t : tasks) {
+            taskList.add(t.getDescription());
         }
         taskView.updateTaskList(taskList);
     }
+
 }

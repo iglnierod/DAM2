@@ -5,7 +5,8 @@
 package model.taskManager;
 
 /**
- * @author iglesias_nieto_rodrigo
+ *
+ * @author dides
  */
 public class Task {
     private String description;
@@ -13,24 +14,26 @@ public class Task {
 
     public Task(String description) {
         this.description = description;
-        this.done = false;
+        this.done=false;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public boolean isDone() {
-        return done;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isDone() {
+        return done;
     }
 
     public void setDone(boolean done) {
         this.done = done;
     }
-
-
+    
+    
+    
+    
 }

@@ -10,13 +10,14 @@ import view.MainJFrame;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class Main {
     public static void main(String[] args) {
-        MainJFrame mainview = new MainJFrame();
-        TaskList taskModel = new TaskList();
-        FrontJFrameController fc = new FrontJFrameController(mainview, taskModel);
+        MainJFrame mainview=new MainJFrame();
+        TaskList taskListModel=new TaskList();
+        FrontJFrameController fc=new FrontJFrameController(mainview,taskListModel);
         mainview.setVisible(true);
+        
     }
 }

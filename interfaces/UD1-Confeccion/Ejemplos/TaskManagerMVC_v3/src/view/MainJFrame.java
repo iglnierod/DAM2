@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -61,18 +61,14 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+   public void setQuitMenuItemListener(ActionListener listener) {
+       this.quitMenuItem.addActionListener(listener);
+   }
+   
+   public void setTaskManagerMenuItemListener(ActionListener listener) {
+       this.taskManagerMenuItem.addActionListener(listener);
+   }
 
-    public void setQuitMenuItemListener(ActionListener listener) {
-        this.quitMenuItem.addActionListener(listener);
-    }
-
-    public void setTaskManagerItemListener(ActionListener listener) {
-        this.taskManagerMenuItem.addActionListener(listener);
-    }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
