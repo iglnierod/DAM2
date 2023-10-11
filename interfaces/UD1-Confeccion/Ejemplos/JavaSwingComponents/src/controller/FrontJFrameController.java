@@ -4,11 +4,15 @@
  */
 package controller;
 
+import controller.checkBox.CheckBoxController;
+import controller.comboBox.ComboBoxController;
 import controller.messageDialog.MessageDialogController;
 import controller.radioButton.RadioButtonController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.MainJFrame;
+import view.checkBox.CheckBoxDialog;
+import view.comboBox.ComboBoxDialog;
 import view.messageDialog.MessageDialogDialog;
 import view.radioButton.RadioButtonDialog;
 
@@ -23,8 +27,10 @@ public class FrontJFrameController {
     public FrontJFrameController(MainJFrame view) {
         this.view = view;
         this.view.setQuitMenuItemListener(this.setQuitMenuItemActionListener());
-        this.view.setMessageDialogMenuItemListener(setMessageDialogMenuItemActionListener());
-        this.view.setRadioButtonDialogMenuItemListener(setRadioButtonMenuItemActionListener());
+        this.view.setMessageDialogMenuItemListener(this.setMessageDialogMenuItemActionListener());
+        this.view.setRadioButtonDialogMenuItemListener(this.setRadioButtonDialogMenuItemActionListener());
+        this.view.setCheckBoxButtonDialogMenuItemListener(this.setCheckBoxDialogMenuItemActionListener());
+        this.view.setComboBoxButtonDialogMenuItemListener(this.setComboBoxDialogMenuItemActionListener());
     }
 
     private ActionListener setQuitMenuItemActionListener() {
@@ -50,15 +56,41 @@ public class FrontJFrameController {
         return al;
     }
 
-    private ActionListener setRadioButtonMenuItemActionListener() {
+    private ActionListener setRadioButtonDialogMenuItemActionListener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RadioButtonDialog rbd = new RadioButtonDialog(view, true);
-                RadioButtonController rbc = new RadioButtonController(rbd);
-                rbd.setVisible(true);
+                RadioButtonDialog md = new RadioButtonDialog(view, true);
+                RadioButtonController mdc = new RadioButtonController(md);
+                md.setVisible(true);
             }
         };
         return al;
     }
+
+    private ActionListener setCheckBoxDialogMenuItemActionListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CheckBoxDialog cb = new CheckBoxDialog(view, true);
+                CheckBoxController cbc = new CheckBoxController(cb);
+                cb.setVisible(true);
+            }
+        };
+        return al;
+    }
+
+        private ActionListener setComboBoxDialogMenuItemActionListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ComboBoxDialog cb = new ComboBoxDialog(view, true);
+                ComboBoxController cbc = new ComboBoxController(cb);
+                cb.setVisible(true);
+            }
+        };
+        return al;
+    }
+    
+    
 }

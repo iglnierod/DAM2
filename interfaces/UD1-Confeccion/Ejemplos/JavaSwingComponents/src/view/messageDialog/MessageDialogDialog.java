@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class MessageDialogDialog extends javax.swing.JDialog {
 
@@ -38,33 +38,25 @@ public class MessageDialogDialog extends javax.swing.JDialog {
         messageDialogLabel.setText("Message Dialog");
 
         showMessageDialogButton.setText("Show Message Dialog");
-        showMessageDialogButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showMessageDialogButtonActionPerformed(evt);
-            }
-        });
 
         showConfirmDialogButton.setText("Show Confirm Dialog");
-        showConfirmDialogButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showConfirmDialogButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(messageDialogLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(173, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(showConfirmDialogButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(showMessageDialogButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(messageDialogLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 102, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(showMessageDialogButton, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                            .addComponent(showConfirmDialogButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,19 +67,11 @@ public class MessageDialogDialog extends javax.swing.JDialog {
                 .addComponent(showMessageDialogButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(showConfirmDialogButton)
-                .addGap(16, 16, 16))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void showMessageDialogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMessageDialogButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_showMessageDialogButtonActionPerformed
-
-    private void showConfirmDialogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showConfirmDialogButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_showConfirmDialogButtonActionPerformed
 
     public void addMessageDialogActionListener(ActionListener listener) {
         this.showMessageDialogButton.addActionListener(listener);
@@ -96,6 +80,7 @@ public class MessageDialogDialog extends javax.swing.JDialog {
     public void addConfirmDialogActionListener(ActionListener listener) {
         this.showConfirmDialogButton.addActionListener(listener);
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel messageDialogLabel;

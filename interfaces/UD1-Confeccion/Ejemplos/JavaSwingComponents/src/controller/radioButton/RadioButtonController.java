@@ -10,7 +10,7 @@ import view.radioButton.RadioButtonDialog;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class RadioButtonController {
 
@@ -18,18 +18,20 @@ public class RadioButtonController {
 
     public RadioButtonController(RadioButtonDialog view) {
         this.view = view;
-        this.view.addGetOptionButtonActionListener(addGetOptionButtonActionLister());
+        this.view.addGetOptionButtonActionListener(this.addGetOptionButtonActionListener());
     }
 
-    private ActionListener addGetOptionButtonActionLister() {
+    private ActionListener addGetOptionButtonActionListener() {
         ActionListener al = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                String selectedOption = "";
-                selectedOption = view.getSelectedOption();
-                System.out.println("selected option: " + selectedOption);
+            public void actionPerformed(ActionEvent e) { 
+                String selectedOption=view.getSelectedOption();
+                System.out.println("selected option: "+selectedOption);
             }
         };
+
         return al;
+
     }
+
 }

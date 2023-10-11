@@ -11,7 +11,7 @@ import view.messageDialog.MessageDialogDialog;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class MessageDialogController {
 
@@ -19,30 +19,30 @@ public class MessageDialogController {
 
     public MessageDialogController(MessageDialogDialog view) {
         this.view = view;
-        this.view.addMessageDialogActionListener(addMessageDialogActionListener());
-        this.view.addConfirmDialogActionListener(addConfirmDialogActionListener());
+        this.view.addMessageDialogActionListener(this.addMessageDialogActionListener());
+        this.view.addConfirmDialogActionListener(this.addConfirmDialogActionListener());
     }
 
     private ActionListener addMessageDialogActionListener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(view, "Demo text");
+                JOptionPane.showMessageDialog(view, "Demo message");
             }
         };
-
         return al;
     }
+
     
         private ActionListener addConfirmDialogActionListener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int result = JOptionPane.showConfirmDialog(view, "Aceptar o Cancelar?");
-                System.out.println("ConfirmDialog return value: " + result);
+                int result= JOptionPane.showConfirmDialog(view, "Accept or Cancel?");
+                System.out.println("Confirm Dialog return value: "+result);
             }
         };
-
         return al;
     }
+    
 }

@@ -12,9 +12,12 @@ import view.MainJFrame;
  * @author dides
  */
 public class Main {
+
     public static void main(String[] args) {
-        MainJFrame mainview=new MainJFrame();
-        FrontJFrameController fc=new FrontJFrameController(mainview);
+        MainJFrame mainview = new MainJFrame();
+
+        FrontJFrameController fc = new FrontJFrameController(mainview);
         mainview.setVisible(true);
+
     }
 }

@@ -30,24 +30,32 @@ public class MainJFrame extends javax.swing.JFrame {
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        messageDialogMenuItem = new javax.swing.JMenuItem();
+        MessageDialogMenuItem = new javax.swing.JMenuItem();
         radioButtonMenuItem = new javax.swing.JMenuItem();
+        checkBoxMenuItem = new javax.swing.JMenuItem();
+        comboBoxMenuItem = new javax.swing.JMenuItem();
         quitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fileMenu.setText("File");
 
-        messageDialogMenuItem.setText("Message Dialog");
-        messageDialogMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        MessageDialogMenuItem.setText("Message Dialog...");
+        fileMenu.add(MessageDialogMenuItem);
+
+        radioButtonMenuItem.setText("Radio Button...");
+        fileMenu.add(radioButtonMenuItem);
+
+        checkBoxMenuItem.setText("Check Box...");
+        checkBoxMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                messageDialogMenuItemActionPerformed(evt);
+                checkBoxMenuItemActionPerformed(evt);
             }
         });
-        fileMenu.add(messageDialogMenuItem);
+        fileMenu.add(checkBoxMenuItem);
 
-        radioButtonMenuItem.setText("Radio Button");
-        fileMenu.add(radioButtonMenuItem);
+        comboBoxMenuItem.setText("Combo Box + Color...");
+        fileMenu.add(comboBoxMenuItem);
 
         quitMenuItem.setText("Quit");
         fileMenu.add(quitMenuItem);
@@ -70,26 +78,36 @@ public class MainJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void messageDialogMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageDialogMenuItemActionPerformed
+    private void checkBoxMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_messageDialogMenuItemActionPerformed
+    }//GEN-LAST:event_checkBoxMenuItemActionPerformed
 
-   public void setQuitMenuItemListener(ActionListener listener) {
-       this.quitMenuItem.addActionListener(listener);
-   }
-   
-   public void setMessageDialogMenuItemListener(ActionListener listener) {
-       this.messageDialogMenuItem.addActionListener(listener);
-   }
+    public void setQuitMenuItemListener(ActionListener listener) {
+        this.quitMenuItem.addActionListener(listener);
+    }
 
-   public void setRadioButtonDialogMenuItemListener(ActionListener listener) {
-       this.radioButtonMenuItem.addActionListener(listener);
-   } 
-   
+    public void setMessageDialogMenuItemListener(ActionListener listener) {
+        this.MessageDialogMenuItem.addActionListener(listener);
+    }
+
+    public void setRadioButtonDialogMenuItemListener(ActionListener listener) {
+        this.radioButtonMenuItem.addActionListener(listener);
+    }
+
+    public void setCheckBoxButtonDialogMenuItemListener(ActionListener listener) {
+        this.checkBoxMenuItem.addActionListener(listener);
+    }
+
+    public void setComboBoxButtonDialogMenuItemListener(ActionListener listener) {
+        this.comboBoxMenuItem.addActionListener(listener);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MessageDialogMenuItem;
+    private javax.swing.JMenuItem checkBoxMenuItem;
+    private javax.swing.JMenuItem comboBoxMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem messageDialogMenuItem;
     private javax.swing.JMenuItem quitMenuItem;
     private javax.swing.JMenuItem radioButtonMenuItem;
     // End of variables declaration//GEN-END:variables

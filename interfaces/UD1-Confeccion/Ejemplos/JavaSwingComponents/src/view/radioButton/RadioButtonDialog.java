@@ -8,12 +8,12 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author iglesias_nieto_rodrigo
+ * @author dides
  */
 public class RadioButtonDialog extends javax.swing.JDialog {
 
     /**
-     * Creates new form RadioButtonDialog
+     * Creates new form radioButtonDialog
      */
     public RadioButtonDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -30,27 +30,27 @@ public class RadioButtonDialog extends javax.swing.JDialog {
     private void initComponents() {
 
         optionGroup = new javax.swing.ButtonGroup();
-        opcion1RadioButton = new javax.swing.JRadioButton();
-        opcion2RadioButton = new javax.swing.JRadioButton();
-        opcion3RadioButton = new javax.swing.JRadioButton();
+        option1RadioButton = new javax.swing.JRadioButton();
+        option2RadioButton = new javax.swing.JRadioButton();
+        option3RadioButton = new javax.swing.JRadioButton();
         radioButtonLabel = new javax.swing.JLabel();
         getSelectedOptionButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        optionGroup.add(opcion1RadioButton);
-        opcion1RadioButton.setText("Opcion 1");
-        opcion1RadioButton.setActionCommand("op1");
+        optionGroup.add(option1RadioButton);
+        option1RadioButton.setText("Option 1");
+        option1RadioButton.setActionCommand("opt1");
 
-        optionGroup.add(opcion2RadioButton);
-        opcion2RadioButton.setText("Opcion 2");
-        opcion2RadioButton.setActionCommand("opt2");
+        optionGroup.add(option2RadioButton);
+        option2RadioButton.setText("Option 2");
+        option2RadioButton.setActionCommand("opt2");
 
-        optionGroup.add(opcion3RadioButton);
-        opcion3RadioButton.setText("Opcion 3");
-        opcion3RadioButton.setActionCommand("op3");
+        optionGroup.add(option3RadioButton);
+        option3RadioButton.setText("Option 3");
+        option3RadioButton.setActionCommand("opt3");
 
-        radioButtonLabel.setText("Radio Button");
+        radioButtonLabel.setText("Radio Button Demo");
 
         getSelectedOptionButton.setText("Get selected option");
 
@@ -59,32 +59,32 @@ public class RadioButtonDialog extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(opcion3RadioButton)
-                    .addComponent(opcion2RadioButton)
-                    .addComponent(opcion1RadioButton)
-                    .addComponent(radioButtonLabel))
+                    .addComponent(radioButtonLabel)
+                    .addComponent(option1RadioButton)
+                    .addComponent(option2RadioButton)
+                    .addComponent(option3RadioButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addComponent(getSelectedOptionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(getSelectedOptionButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addComponent(radioButtonLabel)
+                .addGap(29, 29, 29)
+                .addComponent(option1RadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option2RadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(option3RadioButton)
                 .addGap(18, 18, 18)
-                .addComponent(opcion1RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(opcion2RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(opcion3RadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(getSelectedOptionButton)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,9 +104,9 @@ public class RadioButtonDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton getSelectedOptionButton;
-    private javax.swing.JRadioButton opcion1RadioButton;
-    private javax.swing.JRadioButton opcion2RadioButton;
-    private javax.swing.JRadioButton opcion3RadioButton;
+    private javax.swing.JRadioButton option1RadioButton;
+    private javax.swing.JRadioButton option2RadioButton;
+    private javax.swing.JRadioButton option3RadioButton;
     private javax.swing.ButtonGroup optionGroup;
     private javax.swing.JLabel radioButtonLabel;
     // End of variables declaration//GEN-END:variables

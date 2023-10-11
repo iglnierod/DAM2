@@ -9,17 +9,27 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="messageDialogMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="MessageDialogMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Message Dialog"/>
+                <Property name="text" type="java.lang.String" value="Message Dialog..."/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="messageDialogMenuItemActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="radioButtonMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Radio Button"/>
+                <Property name="text" type="java.lang.String" value="Radio Button..."/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="checkBoxMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Check Box..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkBoxMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="comboBoxMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Combo Box + Color..."/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="quitMenuItem">
