@@ -1,5 +1,5 @@
 ### Temas tratados:
-- Utilización de la libreriía
+- Utilización de la librería
 - Funciones básicas: createRefs(), constraintAs(), linkTo()
 - Posicionamiento: parent.top, parent.bottom, parent.start, parent.end
 - Guías, Barreras y Cadenas
