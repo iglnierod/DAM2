@@ -31,6 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         manageDataMenuItem = new javax.swing.JMenuItem();
+        manageComputersMenuItem = new javax.swing.JMenuItem();
         quitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,6 +40,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         manageDataMenuItem.setText("Manage data...");
         fileMenu.add(manageDataMenuItem);
+
+        manageComputersMenuItem.setText("Manage computers...");
+        fileMenu.add(manageComputersMenuItem);
 
         quitMenuItem.setText("Quit");
         fileMenu.add(quitMenuItem);
@@ -69,8 +73,13 @@ public class MainJFrame extends javax.swing.JFrame {
         this.manageDataMenuItem.addActionListener(listener);
     }
     
+    public void setManageComputersMenuItemListener(ActionListener listener) {
+        this.manageComputersMenuItem.addActionListener(listener);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenuItem manageComputersMenuItem;
     private javax.swing.JMenuItem manageDataMenuItem;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem quitMenuItem;

@@ -14,6 +14,11 @@
                 <Property name="text" type="java.lang.String" value="Manage data..."/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="manageComputersMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Manage computers..."/>
+              </Properties>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="quitMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Quit"/>

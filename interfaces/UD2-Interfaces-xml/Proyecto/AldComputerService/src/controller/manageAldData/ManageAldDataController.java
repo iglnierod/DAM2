@@ -49,7 +49,7 @@ public class ManageAldDataController {
         view.setTelephoneNumberText(model.getTelephoneNumber());
         view.setNumberOfEmployeesValue(model.getNumberOfEmployees());
     }
-    
+
     private ActionListener setSaveButtonListener() {
         ActionListener al = new ActionListener() {
             @Override
