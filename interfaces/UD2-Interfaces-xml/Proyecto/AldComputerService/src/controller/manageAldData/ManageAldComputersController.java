@@ -6,7 +6,9 @@ package controller.manageAldData;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.aldComputerService.AldComputerService;
 import model.aldComputerService.Computer;
@@ -28,26 +30,31 @@ public class ManageAldComputersController {
         this.model = model;
         view.setComputersPanelVisible(false);
         this.addListeners();
+        this.addDefaultComputers();
     }
 
     private void addListeners() {
         this.view.setAddButtonActionListener(setAddButtonListener());
         this.view.setCancelButtonActionListener(setCancelButtonListener());
+        this.view.setSaveButtonActionListener(setSaveButtonListener());
+        this.view.setEditButtonActionListener(setEditButtonListener());
     }
 
-    private void addComputers() {
-        Laptop laptop = new Laptop(50, 19, "Laptop-0", "Lenovo", "ThinkPad", 8);
-        Server server = new Server(4, 2000, "Server-0", "AMD", "Server-0", 128);
-    }
-    
-    private void addRowsToTable() {
+    private void addDefaultComputers() {
         DefaultTableModel tableModel = (DefaultTableModel) this.view.getComputersTableModel();
-        Collection<Computer> computersCollection = model.getComputers().values();
-        Object[] row;
-        for (Computer computer : computersCollection) {
-            row = new Object[]{computer.getSerialNumber(), computer.getBrand(), computer.getModel()};
-            tableModel.addRow(row);
+        Collection<Computer> computers = this.model.getComputers().values();
+        for (Computer computer : computers) {
+            Object[] data = new Object[]{computer.getSerialNumber(), computer.getBrand(), computer.getModel()};
+            tableModel.addRow(data);
         }
+        this.view.setComputersTableModel(tableModel);
+    }
+
+    private void addComputer(Computer computer) {
+        DefaultTableModel tableModel = (DefaultTableModel) this.view.getComputersTableModel();
+        Object[] data = new Object[]{computer.getSerialNumber(), computer.getBrand(), computer.getModel()};
+        tableModel.addRow(data);
+
         this.view.setComputersTableModel(tableModel);
     }
 
@@ -65,7 +72,16 @@ public class ManageAldComputersController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: Agregar lógica para el botón "Edit" aquí
+                ArrayList<String> row = view.getComputersTableSelectedRow();
+                if (row == null) {
+                    return;
+                }
+
+                view.setSerialNumberText(row.get(0));
+                view.setBrandText(row.get(1));
+                view.setModelText(row.get(2));
+                view.setComputersPanelVisible(true);
+                view.setComputersTableEnabled(false);
             }
         };
         return al;
@@ -75,7 +91,8 @@ public class ManageAldComputersController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                view.clearComputersPanelFields();
+                view.setComputersTableEnabled(true);
+                view.clearComputersPanelTextFields();
                 view.setComputersPanelVisible(false);
             }
         };
@@ -86,7 +103,22 @@ public class ManageAldComputersController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: Agregar lógica para el botón "Save" aquí
+                String serialNumber = view.getSerialNumberText();
+                String brand = view.getBrandText();
+                String pcModel = view.getModelText();
+
+                if (serialNumber.isEmpty() && brand.isEmpty() && pcModel.isEmpty()) {
+                    JOptionPane.showMessageDialog(view, "Es necesario llenar todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                Computer newComputer = new Laptop(serialNumber, brand, pcModel);
+                model.addComputer(newComputer);
+                addComputer(newComputer);
+                view.setComputersTableEnabled(true);
+                view.setComputersPanelVisible(false);
+                //JOptionPane.showMessageDialog(view, "Ordenador añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                view.clearComputersPanelTextFields();
+                
             }
         };
         return al;

@@ -232,25 +232,69 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         }
         computersTable.setModel(model);
     }*/
-
     public void setComputersTableModel(TableModel model) {
         this.computersTable.setModel(model);
     }
-    
+
     public void setComputersPanelVisible(boolean bool) {
         computerDataPanel.setVisible(bool);
-    }
-
-    public void clearComputersPanelFields() {
-        serialNumberTextField.setText("");
-        brandTextField.setText("");
-        modelTextField.setText("");
     }
 
     public TableModel getComputersTableModel() {
         return computersTable.getModel();
     }
-    
+
+    public String getSerialNumberText() {
+        return this.serialNumberTextField.getText();
+    }
+
+    public String getBrandText() {
+        return this.brandTextField.getText();
+    }
+
+    public String getModelText() {
+        return this.modelTextField.getText();
+    }
+
+    public void setSerialNumberText(String txt) {
+        this.serialNumberTextField.setText(txt);
+    }
+
+    public void setBrandText(String txt) {
+        this.brandTextField.setText(txt);
+    }
+
+    public void setModelText(String txt) {
+        this.modelTextField.setText(txt);
+    }
+
+    public void clearComputersPanelTextFields() {
+        this.serialNumberTextField.setText("");
+        this.brandTextField.setText("");
+        this.modelTextField.setText("");
+    }
+
+    public boolean isComputersTableRowSelected() {
+        return computersTable.getSelectedRow() != -1;
+    }
+
+    public ArrayList<String> getComputersTableSelectedRow() {
+        ArrayList<String> row = new ArrayList<>();
+        if (isComputersTableRowSelected()) {
+            int selectedRow = this.computersTable.getSelectedRow();
+            for (int i = 0; i < 3; i++) {
+                row.add((String) computersTable.getValueAt(selectedRow, i));
+            }
+            return row;
+        }
+
+        return null;
+    }
+
+    public void setComputersTableEnabled(boolean bool) {
+        this.computersTable.setEnabled(bool);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JLabel brandLabel;

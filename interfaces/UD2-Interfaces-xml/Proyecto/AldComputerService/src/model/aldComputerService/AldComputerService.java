@@ -12,25 +12,33 @@ import java.util.HashMap;
  * @author iglesias_nieto_rodrigo
  */
 public class AldComputerService {
-    
+
     private String name;
     private String address;
     private String telephoneNumber;
     private int numberOfEmployees;
     private HashMap<String, Computer> computers = new HashMap<>();
-            
+
     public AldComputerService() {
         this.name = "";
         this.address = "";
         this.telephoneNumber = "";
         this.numberOfEmployees = 0;
-        computers = new HashMap<>();
+        computers = Computer.addDefaults();
     }
 
     public void addComputer(Computer computer) {
-        this.computers.put(computer.getSerialNumber(), computer);
+        if (this.computers.get(computer.getSerialNumber()) == null) {
+            this.computers.put(computer.getSerialNumber(), computer);
+        } else {
+            this.computers.replace(computer.getSerialNumber(), computer);
+        }
     }
-    
+
+    public void getComputerInPosition(int position) {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -70,7 +78,7 @@ public class AldComputerService {
     public void setComputers(HashMap<String, Computer> computers) {
         this.computers = computers;
     }
-    
+
     @Override
     public String toString() {
         return "Name: " + name + "\n"

@@ -9,9 +9,15 @@ package model.aldComputerService;
  * @author iglesias_nieto_rodrigo
  */
 public class Laptop extends Computer {
-    
+
     private int batteryWHR;
     private int displayInches;
+
+    public Laptop(String serialNumber, String brand, String model) {
+        super(serialNumber, brand, model);
+        this.batteryWHR = 0;
+        this.displayInches = 0;
+    }
 
     public Laptop(int batteryWHR, int displayInches, String serialNumber, String brand, String model, int ramGB) {
         super(serialNumber, brand, model, ramGB);
@@ -34,6 +40,5 @@ public class Laptop extends Computer {
     public void setDisplayInches(int displayInches) {
         this.displayInches = displayInches;
     }
-    
-    
+
 }
