@@ -50,9 +50,11 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        computersTable.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         computersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,9 +87,15 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
         serialNumberLabel.setText("Serial number:");
 
+        serialNumberTextField.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+
         brandLabel.setText("Brand:");
 
+        brandTextField.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+
         modelLabel.setText("Model:");
+
+        modelTextField.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
 
         saveButton.setText("Save");
 
@@ -145,19 +153,31 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
         editButton.setText("Edit");
 
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout computersPanelLayout = new javax.swing.GroupLayout(computersPanel);
         computersPanel.setLayout(computersPanelLayout);
         computersPanelLayout.setHorizontalGroup(
             computersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(computersPanelLayout.createSequentialGroup()
-                .addGap(0, 43, Short.MAX_VALUE)
                 .addGroup(computersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(computersPanelLayout.createSequentialGroup()
+                        .addGap(0, 43, Short.MAX_VALUE)
+                        .addGroup(computersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(computerDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(computersPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(deleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(editButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addButton))
-                    .addComponent(computerDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addButton)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         computersPanelLayout.setVerticalGroup(
@@ -168,7 +188,8 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(computersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton)
-                    .addComponent(editButton))
+                    .addComponent(editButton)
+                    .addComponent(deleteButton))
                 .addGap(18, 18, 18)
                 .addComponent(computerDataPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -190,6 +211,10 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
     public void setAddButtonActionListener(ActionListener listener) {
         this.addButton.addActionListener(listener);
     }
@@ -200,6 +225,10 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
     public void setEditButtonActionListener(ActionListener listener) {
         this.editButton.addActionListener(listener);
+    }
+
+    public void setDeleteButtonActionListener(ActionListener listener) {
+        this.deleteButton.addActionListener(listener);
     }
 
     public void setSaveButtonActionListener(ActionListener listener) {
@@ -222,16 +251,6 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         this.serialNumberTextField.setEnabled(bool);
     }
 
-    /*public void addRowToComputersTable(HashMap<Integer, Computer> computers) {
-        Collection<Computer> computersCollection = computers.values();
-        DefaultTableModel model = (DefaultTableModel) computersTable.getModel();
-        Object[] row;
-        for (Computer computer : computersCollection) {
-            row = new Object[]{computer.getSerialNumber(), computer.getBrand(), computer.getModel()};
-            model.addRow(row);
-        }
-        computersTable.setModel(model);
-    }*/
     public void setComputersTableModel(TableModel model) {
         this.computersTable.setModel(model);
     }
@@ -291,9 +310,30 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         return null;
     }
 
+    public void editSelectedRow(Computer computer) {
+        int selectedRow = this.computersTable.getSelectedRow();
+        this.computersTable.setValueAt(computer.getSerialNumber(), selectedRow, 0);
+        this.computersTable.setValueAt(computer.getBrand(), selectedRow, 1);
+        this.computersTable.setValueAt(computer.getModel(), selectedRow, 2);
+    }
+
+    public void deleteSelectedRow() {
+        int selectedRow = this.computersTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) computersTable.getModel();
+        if (selectedRow != -1) {
+            model.removeRow(selectedRow);
+        }
+        this.computersTable.clearSelection();
+    }
+
+    public int getComputersTableSelectedRowInt() {
+        return this.computersTable.getSelectedRow();
+    }
+
     public void setComputersTableEnabled(boolean bool) {
         this.computersTable.setEnabled(bool);
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
@@ -303,6 +343,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     private javax.swing.JPanel computerDataPanel;
     private javax.swing.JPanel computersPanel;
     private javax.swing.JTable computersTable;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
     private javax.swing.JTabbedPane manageComputersTabbedPane;
     private javax.swing.JLabel modelLabel;

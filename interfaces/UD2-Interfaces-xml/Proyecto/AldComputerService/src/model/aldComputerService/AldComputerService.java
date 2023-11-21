@@ -25,6 +25,7 @@ public class AldComputerService {
         this.telephoneNumber = "";
         this.numberOfEmployees = 0;
         computers = Computer.addDefaults();
+        printComputers();
     }
 
     public void addComputer(Computer computer) {
@@ -33,10 +34,24 @@ public class AldComputerService {
         } else {
             this.computers.replace(computer.getSerialNumber(), computer);
         }
+        printComputers();
     }
 
-    public void getComputerInPosition(int position) {
+    public void editComputer(Computer computer) {
+        computers.replace(computer.getSerialNumber(), computer);
+        printComputers();
+    }
 
+    public void deleteComputer(String key) {
+        computers.remove(key);
+        printComputers();
+    }
+    
+    public void printComputers() {
+        System.out.println("MODEL COMPUTERS:");
+        for (Computer pc : computers.values()) {
+            System.out.println(pc);
+        }
     }
 
     public String getName() {

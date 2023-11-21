@@ -13,7 +13,6 @@ import javax.swing.table.DefaultTableModel;
 import model.aldComputerService.AldComputerService;
 import model.aldComputerService.Computer;
 import model.aldComputerService.Laptop;
-import model.aldComputerService.Server;
 import view.aldComputerService.ManageAldComputersDialog;
 
 /**
@@ -25,12 +24,15 @@ public class ManageAldComputersController {
     private final ManageAldComputersDialog view;
     private final AldComputerService model;
 
+    private boolean isEdit;
+
     public ManageAldComputersController(ManageAldComputersDialog view, AldComputerService model) {
         this.view = view;
         this.model = model;
         view.setComputersPanelVisible(false);
         this.addListeners();
         this.addDefaultComputers();
+        this.isEdit = false;
     }
 
     private void addListeners() {
@@ -38,6 +40,7 @@ public class ManageAldComputersController {
         this.view.setCancelButtonActionListener(setCancelButtonListener());
         this.view.setSaveButtonActionListener(setSaveButtonListener());
         this.view.setEditButtonActionListener(setEditButtonListener());
+        this.view.setDeleteButtonActionListener(setDeleteButtonListener());
     }
 
     private void addDefaultComputers() {
@@ -56,6 +59,13 @@ public class ManageAldComputersController {
         tableModel.addRow(data);
 
         this.view.setComputersTableModel(tableModel);
+    }
+
+    private void editComputer(String serialNumber, String brand, String model) {
+        Computer computer = new Laptop(serialNumber, brand, model);
+
+        this.view.editSelectedRow(computer);
+        this.model.editComputer(computer);
     }
 
     private ActionListener setAddButtonListener() {
@@ -82,6 +92,29 @@ public class ManageAldComputersController {
                 view.setModelText(row.get(2));
                 view.setComputersPanelVisible(true);
                 view.setComputersTableEnabled(false);
+
+                isEdit = true;
+            }
+        };
+        return al;
+    }
+
+    private ActionListener setDeleteButtonListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<String> row = view.getComputersTableSelectedRow();
+                if (row == null) {
+                    return;
+                }
+
+                String key = row.get(0);
+
+                int option = JOptionPane.showConfirmDialog(view, "Estás seguro que quieres eliminar el ordenador: " + key, "CONFIRMAR", JOptionPane.WARNING_MESSAGE);
+                if (option == 0) {
+                    view.deleteSelectedRow();
+                    model.deleteComputer(key);
+                }
             }
         };
         return al;
@@ -111,14 +144,21 @@ public class ManageAldComputersController {
                     JOptionPane.showMessageDialog(view, "Es necesario llenar todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                Computer newComputer = new Laptop(serialNumber, brand, pcModel);
-                model.addComputer(newComputer);
-                addComputer(newComputer);
+
+                if (isEdit == false) {
+                    Computer newComputer = new Laptop(serialNumber, brand, pcModel);
+                    model.addComputer(newComputer);
+                    addComputer(newComputer);
+                } else {
+                    editComputer(serialNumber, brand, pcModel);
+                    isEdit = false;
+                }
+
                 view.setComputersTableEnabled(true);
                 view.setComputersPanelVisible(false);
                 //JOptionPane.showMessageDialog(view, "Ordenador añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                 view.clearComputersPanelTextFields();
-                
+
             }
         };
         return al;

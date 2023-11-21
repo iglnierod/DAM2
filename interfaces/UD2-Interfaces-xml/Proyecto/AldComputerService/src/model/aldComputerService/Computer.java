@@ -78,4 +78,13 @@ public abstract class Computer {
 
         return computers;
     }
+
+    @Override
+    public String toString() {
+        return "Computer{"
+                + "serialNumber='" + serialNumber + '\''
+                + ", brand='" + brand + '\''
+                + ", model='" + model + '\''
+                + '}';
+    }
 }
