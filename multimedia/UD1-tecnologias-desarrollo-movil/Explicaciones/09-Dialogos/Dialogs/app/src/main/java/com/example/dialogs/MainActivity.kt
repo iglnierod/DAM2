@@ -17,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.dialogs.ui.theme.DialogsTheme
 import com.example.dialogs.ui.theme.MyConfirmationDialog
-import com.example.dialogs.ui.theme.MyDialogoCustom
 
 
 class MainActivity : ComponentActivity() {
@@ -31,12 +30,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     var show by remember { mutableStateOf(false) }
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center ){
+                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Button(onClick = { show = true }) {
                             Text(text = "Alerta")
                         }
                         //MyDialogoCustom(show) {show = false}
                         MyConfirmationDialog(show = show) { show = false  }
+                        //MyBrightnessDialog(show = false) { show = false }
                     }
                 }
             }
