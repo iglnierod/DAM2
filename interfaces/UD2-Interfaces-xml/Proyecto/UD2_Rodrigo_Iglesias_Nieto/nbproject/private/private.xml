@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/view/aldComputerService/ManageAldComputersDialog.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/Server.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/Laptop.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/controller/manageAldData/ManageAldComputersController.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/AldComputerService.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/PersonalComputer.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/Computer.java</file>
+            <file>file:/home/iglesias_nieto_rodrigo/NetBeansProjects/AldComputerService/src/model/aldComputerService/ComputerType.java</file>
+        </group>
+    </open-files>
+</project-private>

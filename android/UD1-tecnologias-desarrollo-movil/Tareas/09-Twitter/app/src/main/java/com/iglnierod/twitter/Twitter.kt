@@ -1,6 +1,8 @@
 package com.iglnierod.twitter
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,6 +22,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
@@ -30,7 +33,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -42,8 +44,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -56,30 +61,24 @@ fun TwitterScaffold() {
         bottomBar = { MyBottomAppBar() }
     ) { contentPadding ->
         // Screen content
-        Box(modifier = Modifier.padding(contentPadding)) { /* ... */ }
+        Box(modifier = Modifier.padding(contentPadding)) {
+            MyContent()
+        }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyTopAppBar() {
-    TopAppBar(
-        modifier = Modifier.height(110.dp),
-        title = { Text(text = "") },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Color.Black,
-            navigationIconContentColor = Color.White,
-            actionIconContentColor = Color.White
-        ),
-        actions = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
-                    .padding(10.dp),
-                horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.SpaceEvenly
-            ) {
+    Column {
+        CenterAlignedTopAppBar(
+            title = { Text(text = "") },
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = Color.Black,
+                navigationIconContentColor = Color.White,
+                actionIconContentColor = Color.White
+            ),
+            actions = {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
@@ -102,37 +101,82 @@ fun MyTopAppBar() {
                         modifier = Modifier.size(32.dp)
                     )
                 }
-
-                Surface(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(20.dp, 2.dp)
-                ) {
-                    TextField(
-                        modifier = Modifier
-                            .size(40.dp),
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Filled.Search,
-                                contentDescription = "Search",
-                                tint = Color(0XFF657786)
-                            )
-                        },
-                        value = "",
-                        colors = TextFieldDefaults.textFieldColors(
-                            textColor = Color(0XFF657786),
-                            containerColor = Color(0xFFAAB8C2)
-                        ),
-                        shape = RoundedCornerShape(15.dp),
-                        onValueChange = {/* TODO */ },
-                        placeholder = {
-                            Text(text = "Search Direct Messages")
-                        }
-                    )
-                }
             }
+        )
+        TextField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Black)
+                .padding(15.dp, 5.dp)
+                .border(0.dp, Color.Transparent, RoundedCornerShape(100.dp)),
+            leadingIcon = {
+                Icon(
+                    imageVector = Icons.Filled.Search,
+                    contentDescription = "Search",
+                    tint = Color(0XFF657786)
+                )
+            },
+            value = "Search Direct Messages",
+            colors = TextFieldDefaults.textFieldColors(
+                textColor = Color(0XFF99A1A8),
+                containerColor = Color(0xFF202327)
+            ),
+            shape = RoundedCornerShape(100.dp),
+            onValueChange = {/* TODO */ },
+            placeholder = {
+                Text(text = "Search Direct Messages")
+            }
+        )
+    }
+}
+
+@Composable
+fun MyContent() {
+    MyDirectMessages()
+}
+
+@Composable
+fun MyDirectMessages() {
+    Row(
+        modifier = Modifier
+            .background(Color.Black)
+            .padding(10.dp)
+            .fillMaxWidth()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.user_image),
+            contentDescription = "user image",
+            modifier = Modifier
+                .padding(10.dp)
+                .size(64.dp)
+        )
+        MyUserName(name = "Fanzo", username = "iSocialFanz", lastConnection = "1h")
+    }
+}
+
+@Composable
+fun MyUserName(name: String, username: String, lastConnection: String) {
+    Column() {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = name,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+            Image(
+                painter = painterResource(id = R.drawable.twitter_verified_badge),
+                contentDescription = "Verified",
+                modifier = Modifier
+                    .size(14.dp)
+            )
+            Text(
+                text = "$username · $lastConnection",
+                color = Color(0XFF99A1A8)
+            )
         }
-    )
+    }
 }
 
 @Composable
