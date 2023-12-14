@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.dialogs.ui.theme.DialogsTheme
 import com.example.dialogs.ui.theme.MyConfirmationDialog
+import com.example.dialogs.ui.theme.MyDialogoAlertAdvanced
+import com.example.dialogs.ui.theme.MyDialogoAlertSimple
 import com.example.dialogs.ui.theme.MyDialogoCustom
 
 
@@ -36,7 +38,10 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Alerta")
                         }
                         //MyDialogoCustom(show) {show = false}
-                        MyConfirmationDialog(show = show) { show = false  }
+                        //MyDialogoAlertAdvanced( show = show, onDismiss = {show = false}, onConfirm = {show = true})
+                        //MyDialogoAlertSimple(show = show, onDismiss = {show = false})
+                        MyDialogoCustom(show = show, onDismiss = {show = false})
+                        //MyConfirmationDialog(show = show, onDismiss = {show = false})
                     }
                 }
             }

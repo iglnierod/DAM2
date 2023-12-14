@@ -67,6 +67,7 @@ class MainActivity : ComponentActivity() {
 /*************************************** CARD *****************************************************/
 /**************************************************************************************************/
 
+@Preview
 @Composable
 fun MyCard(){
     var isSelected by rememberSaveable { mutableStateOf(false)}
