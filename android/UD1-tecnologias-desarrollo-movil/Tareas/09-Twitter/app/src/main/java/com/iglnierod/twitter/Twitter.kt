@@ -13,8 +13,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Call
@@ -43,15 +45,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TwitterScaffold() {
@@ -86,8 +90,10 @@ fun MyTopAppBar() {
                     Image(
                         painter = painterResource(id = R.drawable.user_image),
                         contentDescription = "user image",
+                        contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .size(32.dp)
+                            .clip(CircleShape)
                             .border(0.dp, Color.Transparent, CircleShape)
                     )
                     Text(
@@ -119,7 +125,10 @@ fun MyTopAppBar() {
             value = "Search Direct Messages",
             colors = TextFieldDefaults.textFieldColors(
                 textColor = Color(0XFF99A1A8),
-                containerColor = Color(0xFF202327)
+                containerColor = Color(0xFF202327),
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                disabledIndicatorColor = Color.Transparent
             ),
             shape = RoundedCornerShape(100.dp),
             onValueChange = {/* TODO */ },
@@ -129,33 +138,55 @@ fun MyTopAppBar() {
         )
     }
 }
-
 @Composable
 fun MyContent() {
-    MyDirectMessages()
-}
-
-@Composable
-fun MyDirectMessages() {
-    Row(
-        modifier = Modifier
-            .background(Color.Black)
-            .padding(10.dp)
-            .fillMaxWidth()
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState())
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.user_image),
-            contentDescription = "user image",
-            modifier = Modifier
-                .padding(10.dp)
-                .size(64.dp)
-        )
-        MyUserName(name = "Fanzo", username = "iSocialFanz", lastConnection = "1h")
+        MyDirectMessages(R.drawable.cat, "Lunnaris", "Lunnaris100", "4h", "Tengo sueño y tos")
+        MyDirectMessages(R.drawable.cat1, "crampy", "craampyy", "1h", "Soy tonto y estoy triste")
+        MyDirectMessages(R.drawable.cat2, "Xian", "TheMan1a", "12h", "No, domingo de almagv")
+        MyDirectMessages(R.drawable.cat3, "Andres😈", "Andrupi", "10 días", "Hoy examen de conducir, deseadme suerte")
+        MyDirectMessages(R.drawable.cat4, "Alma", "almagv", "3h", "Cerámica!")
     }
 }
 
 @Composable
-fun MyUserName(name: String, username: String, lastConnection: String) {
+fun MyDirectMessages(
+    userIcon: Int,
+    name: String,
+    username: String,
+    lastConnection: String,
+    lastMessage: String
+) {
+    Row(
+        modifier = Modifier
+            .background(Color.Black)
+            .padding(10.dp)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Image(
+            painter = painterResource(id = userIcon),
+            contentDescription = "user image",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .padding(10.dp)
+                .size(64.dp)
+                .clip(CircleShape)
+                .border(0.dp, Color.Transparent, CircleShape)
+        )
+        MyUserName(name, username, lastConnection, lastMessage)
+    }
+}
+
+@Composable
+fun MyUserName(
+    name: String,
+    username: String,
+    lastConnection: String,
+    lastMessage: String
+) {
     Column() {
         Row(
             verticalAlignment = Alignment.CenterVertically
@@ -163,19 +194,28 @@ fun MyUserName(name: String, username: String, lastConnection: String) {
             Text(
                 text = name,
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color.White,
+                fontSize = 20.sp
             )
             Image(
                 painter = painterResource(id = R.drawable.twitter_verified_badge),
                 contentDescription = "Verified",
                 modifier = Modifier
-                    .size(14.dp)
+                    .padding(2.dp, 0.dp)
+                    .size(20.dp)
             )
             Text(
-                text = "$username · $lastConnection",
-                color = Color(0XFF99A1A8)
+                text = "@$username · $lastConnection",
+                color = Color(0XFF99A1A8),
+                fontSize = 20.sp
             )
         }
+        Text(
+            text = lastMessage,
+            color = Color(0XFF99A1A8),
+            fontSize = 18.sp,
+            modifier = Modifier.height(50.dp)
+        )
     }
 }
 

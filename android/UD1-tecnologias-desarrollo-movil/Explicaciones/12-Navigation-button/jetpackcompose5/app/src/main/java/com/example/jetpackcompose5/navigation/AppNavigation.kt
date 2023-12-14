@@ -19,6 +19,5 @@ fun AppNavigation(){
         composable(route = AppScreens.SecondScreen.route){
             SecondScreen(navController)
         }
-
     }
 }
