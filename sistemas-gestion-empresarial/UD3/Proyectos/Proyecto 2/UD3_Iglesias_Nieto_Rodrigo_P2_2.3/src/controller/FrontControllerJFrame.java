@@ -29,6 +29,7 @@ import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.properties.UnitValue;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -129,8 +130,13 @@ public class FrontControllerJFrame {
                 tableModel.addRow(new Object[]{name, street, city, phone, mobile});
             }
         } catch (XmlRpcException ex) {
+            JOptionPane.showMessageDialog(view, "No se ha podido conectar al servidor", "Error de conexión", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         } catch (MalformedURLException ex) {
+            JOptionPane.showMessageDialog(view, "No se ha podido conectar al servidor", "Error de conexión", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(view, "No se ha podido hacer la consulta", "Error de conexión", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
         return tableModel;
@@ -201,11 +207,11 @@ public class FrontControllerJFrame {
             }
             Text title = new Text("Odoo enterprises");
             title.setFontSize(17.5f);
-            
+
             Style titleStyle = new Style();
             titleStyle.setBold();
             title.addStyle(titleStyle);
-            
+
             doc.add(new Paragraph(title));
             doc.add(table);
 
