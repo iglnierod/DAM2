@@ -109,10 +109,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Bussiness name"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="addressTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Bussiness address"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="phoneNumberTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Bussiness phone number"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="numberOfEmployeesSpinner">
       <Properties>
@@ -134,12 +143,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="editButton">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="cc" red="ff" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Edit"/>
       </Properties>
     </Component>

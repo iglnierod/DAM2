@@ -43,12 +43,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         fileMenu.setText("File");
 
+        manageDataMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         manageDataMenuItem.setText("Manage data...");
         fileMenu.add(manageDataMenuItem);
 
+        manageComputersMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         manageComputersMenuItem.setText("Manage computers...");
         fileMenu.add(manageComputersMenuItem);
 
+        quitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         quitMenuItem.setText("Quit");
         fileMenu.add(quitMenuItem);
 
@@ -56,6 +59,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         notificationsMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/alert.png"))); // NOI18N
 
+        notificationsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         notificationsMenuItem.setText("Notifications...");
         notificationsMenu.add(notificationsMenuItem);
 
