@@ -20,9 +20,9 @@ public class CrearTabla {
             Statement stmt = con.createStatement();
             String sql = String.format("CREATE TABLE IF NOT EXISTS %s(\n" +
                     "\tid int PRIMARY KEY,\n" +
-                    "\ttitulo varchar(30),\n" +
+                    "\ttitulo varchar(90) NOT NULL,\n" +
                     "\tanio_publicacion YEAR,\n" +
-                    "\tautor varchar(50)\n" +
+                    "\tautor varchar(90)\n" +
                     ");", nombreTabla);
             stmt.executeUpdate(sql);
             System.out.printf("Se ha creado la tabla: %s\n", nombreTabla);
