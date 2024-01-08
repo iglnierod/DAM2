@@ -1,0 +1,13 @@
+#Fri Dec 15 01:06:09 CET 2023
+base.0=X\:\\repos\\DAM2\\android\\UD1-tecnologias-desarrollo-movil\\Tareas\\09-Twitter\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=X\:\\repos\\DAM2\\android\\UD1-tecnologias-desarrollo-movil\\Tareas\\09-Twitter\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=X\:\\repos\\DAM2\\android\\UD1-tecnologias-desarrollo-movil\\Tareas\\09-Twitter\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.3=X\:\\repos\\DAM2\\android\\UD1-tecnologias-desarrollo-movil\\Tareas\\09-Twitter\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=11/classes.dex
+path.3=classes2.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
