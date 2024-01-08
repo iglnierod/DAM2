@@ -51,14 +51,18 @@ public class ManageAldDataDialog extends javax.swing.JDialog {
 
         numberOfEmployeesLabel.setText("Number of employees:");
 
+        nameTextField.setToolTipText("Bussiness name");
+
+        addressTextField.setToolTipText("Bussiness address");
+
+        phoneNumberTextField.setToolTipText("Bussiness phone number");
+
         numberOfEmployeesSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         saveButton.setBackground(new java.awt.Color(102, 204, 0));
         saveButton.setForeground(new java.awt.Color(255, 255, 255));
         saveButton.setText("Save");
 
-        editButton.setBackground(new java.awt.Color(255, 204, 0));
-        editButton.setForeground(new java.awt.Color(255, 255, 255));
         editButton.setText("Edit");
 
         cancelButton.setText("Cancel");

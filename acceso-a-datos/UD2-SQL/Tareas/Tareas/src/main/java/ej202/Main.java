@@ -1,9 +1,6 @@
 package ej202;
 
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Main {
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/";
@@ -12,16 +9,28 @@ public class Main {
 
     public static void main(String[] args) {
         try (Connection con = DriverManager.getConnection(URL, USER, PASS)) {
-            final String baseDeDatos = "libros";
+            final String bd = "libros";
             final String tabla = "libros";
-            CrearBaseDatos crearBaseDatos = new CrearBaseDatos(baseDeDatos, con);
+            CrearBaseDatos crearBaseDatos = new CrearBaseDatos(bd, con);
             crearBaseDatos.crearBD();
 
-            CrearTabla crearTabla = new CrearTabla(baseDeDatos, tabla, con);
+            CrearTabla crearTabla = new CrearTabla(bd, tabla, con);
             crearTabla.crearTabla();
 
-            CompletaLibros completaLibros = new CompletaLibros(baseDeDatos, tabla, con);
+            CompletaLibros completaLibros = new CompletaLibros(bd, tabla, con);
             completaLibros.anadirLibros();
+
+            System.out.println("TODOS LOS LIBROS");
+            ConsultaLibros.obtenerLibros(con, bd, tabla);
+            System.out.println("- - - - - - -");
+            System.out.println("TODOS LOS LIBROS DE UN AUTOR");
+            ConsultaLibros.obtenerLibrosPorAutor(con, bd, tabla, "George Orwell");
+            System.out.println("- - - - - - -");
+            System.out.println("TODOS LOS LIBROS POSTERIORES A UN AÑO");
+            ConsultaLibros.obtenerLibrosPosteriores(con, bd, tabla, "1960");
+            System.out.println("- - - - - - -");
+
+            ModificacionLibros.modificarTitulo(con, bd, tabla, "1", "Titulo editado");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
