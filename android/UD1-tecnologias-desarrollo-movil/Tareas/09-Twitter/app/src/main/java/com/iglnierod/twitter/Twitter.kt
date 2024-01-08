@@ -187,7 +187,7 @@ fun MyUserName(
     lastConnection: String,
     lastMessage: String
 ) {
-    Column() {
+    Column {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
