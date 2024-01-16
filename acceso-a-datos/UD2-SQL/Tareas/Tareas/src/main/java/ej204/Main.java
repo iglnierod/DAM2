@@ -87,6 +87,8 @@ public class Main {
         consulta("SELECT * FROM empleados.emp WHERE sal >= (SELECT AVG(sal) FROM empleados.emp);");
 
         // ??? 28. Los empleados cuyo salario supera al de sus compañeros de departamento.
+
+        
     }
 
     public static void consulta(String sql) {
