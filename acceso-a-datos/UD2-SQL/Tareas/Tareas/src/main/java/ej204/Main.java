@@ -58,7 +58,7 @@ public class Main {
         // 18. Aquellos empleados que no tienen comisión, ordenados por número de empleado.
         consulta("SELECT * FROM empleados.emp WHERE comision IS NULL ORDER BY numemp;");
 
-        // ???? 19. El salario, la comisión y el salario total de todos los empleados.
+        // 19. El salario, la comisión y el salario total de todos los empleados.
         consulta("SELECT sal, comision, SUM(sal) FROM empleados.emp GROUP BY numemp;");
 
         // 20. Los empleados del departamento 1 cuyo nombre no contiene la cadena LA.
@@ -86,17 +86,58 @@ public class Main {
         // 27. Los empleados cuyo salario supera o coincide con la media del salario de la empresa.
         consulta("SELECT * FROM empleados.emp WHERE sal >= (SELECT AVG(sal) FROM empleados.emp);");
 
-        // ??? 28. Los empleados cuyo salario supera al de sus compañeros de departamento.
+        // 28. Los empleados cuyo salario supera al de sus compañeros de departamento.
+        // TODO
+        /*SELECT * FROM empleados.emp e GROUP BY numdep HAVING MAX(sal);*/
 
-        
+        // 29. Los departamentos que no tienen empleados.
+        consulta("SELECT * FROM empleados.depto d WHERE numdep NOT IN (SELECT numdep FROM empleados.emp e GROUP BY numdep) GROUP BY numdep;");
+
+        // 30. El departamento cuya suma de salarios sea la más alta.
+        consulta("SELECT numdep FROM empleados.emp e GROUP BY numdep ORDER BY sum(sal) DESC LIMIT 1;");
+
+        // 31. Los empleados que no son supervisados por ningún otro.
+        consulta("SELECT e.* FROM empleados.emp e, empleados.depto d WHERE e.numemp = d.numjefe;");
+
+        // 32. Los empleados que trabajen en SANTIAGO o VILAGARCIA.
+        consulta("""
+                    SELECT *
+                    FROM empleados.emp e\s
+                    WHERE e.numdep IN (
+                    	SELECT  numdep\s
+                    	FROM empleados.depto\s
+                    	WHERE localidad IN ('SANTIAGO','VILAGARCIA')
+                    );
+                """);
+
+        // 33. Los empleados con mayor salario de cada departamento.
+        consulta("SELECT  numdep, max(sal) AS maximo_salario FROM empleados.emp e GROUP BY numdep;");
+
+        /* ==== MODIFICACIONES ====*/
+        // 1. Cambia el nombre del empleado con número de empleado 7499 a JORGE.
+        modificacion("UPDATE empleados.emp SET nomemp = 'JORGE' WHERE numemp = 7499;");
+
+        // 2. Cambia la localidad del departamento OPERACIONES a MADRID.
+        modificacion("UPDATE empleados.depto SET localidad = 'MADRID' WHERE nomdep LIKE 'OPERACIONES';");
+
+        // 3. Ponle un salario de 3000 euros a todos los empleados con código superior a 7800.
+        modificacion("UPDATE empleados.emp SET sal = 3000 WHERE numemp > 7800;");
+
+        // 4. Borra los datos del empleado FORD.
+        modificacion("DELETE FROM empleados.emp WHERE emp.nomemp like 'FORD';");
+
+        // 5. Borra los datos del empleado 7934.
+        //modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
+
+        //??? 6. Borra los datos del departamento número 3.
+        /*???*/
     }
 
     public static void consulta(String sql) {
         final String URL = "jdbc:mysql://127.0.0.1:3306/";
         final String USER = "root";
         final String PASS = "abc123.";
-        try (Connection con = DriverManager.getConnection(URL, USER, PASS);
-             Statement stmt = con.createStatement()) {
+        try (Connection con = DriverManager.getConnection(URL, USER, PASS); Statement stmt = con.createStatement()) {
             ResultSet resultSet = stmt.executeQuery(sql);
             System.out.printf("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ %20s ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n", sql);
             printResultSet(resultSet);
@@ -108,6 +149,19 @@ public class Main {
             throw new RuntimeException(e);
         }
     }
+
+    public static void modificacion(String sql) {
+        final String URL = "jdbc:mysql://127.0.0.1:3306/";
+        final String USER = "root";
+        final String PASS = "abc123.";
+        try (Connection con = DriverManager.getConnection(URL, USER, PASS); Statement stmt = con.createStatement()) {
+            stmt.executeUpdate(sql);
+            System.out.println("SE HA REALIZADO LA MODIFICACION: " + sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static void printResultSet(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
