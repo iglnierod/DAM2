@@ -31,6 +31,13 @@ public class Main {
             System.out.println("- - - - - - -");
 
             ModificacionLibros.modificarTitulo(con, bd, tabla, "1", "Titulo editado");
+            ModificacionLibros.modificarAutor(con, bd, tabla, "1", "Autor inventado");
+            ModificacionLibros.modificarAnioPublicacion(con, bd, tabla, "1", "2000");
+            ModificacionLibros.eliminarLibro(con,bd,tabla,"2");
+            ModificacionLibros.eliminarLibrosAnteriores(con,bd,tabla,"2000");
+
+
+            //LimpiarTabla.eliminarRegistros(con, bd, tabla);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
