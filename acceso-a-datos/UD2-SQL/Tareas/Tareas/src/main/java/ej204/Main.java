@@ -3,7 +3,16 @@ package ej204;
 import java.sql.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+//        Departamento dep = new Departamento();
+//        dep.getAll();
+//        dep.insert(1,"Conabili",);
+//        dep.getById(1);
+//        dep.getNameById();
+//        dep.getNumDepById();
+
+
+
         // 1. Los datos completos de los empleados.
         consulta("SELECT * FROM empleados.emp;");
 
@@ -127,10 +136,12 @@ public class Main {
         modificacion("DELETE FROM empleados.emp WHERE emp.nomemp like 'FORD';");
 
         // 5. Borra los datos del empleado 7934.
-        //modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
+        // modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
 
         //??? 6. Borra los datos del departamento número 3.
-        /*???*/
+        setForeignKeyChecks(false);
+        modificacion("DELETE FROM empleados.depto WHERE numdep = 3;");
+        setForeignKeyChecks(true);
     }
 
     public static void consulta(String sql) {
@@ -162,7 +173,6 @@ public class Main {
         }
     }
 
-
     public static void printResultSet(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
         int columnCount = metaData.getColumnCount();
@@ -188,6 +198,22 @@ public class Main {
                 System.out.printf("%-20s", resultSet.getString(i));
             }
             System.out.println();
+        }
+    }
+
+    public static void setForeignKeyChecks(boolean enable) {
+        final String URL = "jdbc:mysql://127.0.0.1:3306/";
+        final String USER = "root";
+        final String PASS = "abc123.";
+
+        String sqlStatement = "SET FOREIGN_KEY_CHECKS = " + (enable ? "1" : "0");
+
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASS);
+             Statement statement = connection.createStatement()) {
+            statement.executeUpdate("USE empleados");
+            statement.executeUpdate(sqlStatement);
+        } catch (SQLException e) {
+            System.err.println("Error al cambiar el estado de las claves foráneas: " + e.getMessage());
         }
     }
 }
