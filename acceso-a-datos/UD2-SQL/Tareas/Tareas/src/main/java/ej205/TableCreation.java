@@ -16,13 +16,14 @@ public class TableCreation {
     public void create() {
         try {
             Statement stmt = con.createStatement();
-            stmt.executeUpdate(String.format("USE %s", Database.DATABASE_NAME));
-            switch (dbms) {
-                case MySQL:
-                    stmt.executeUpdate(getScript());
-                    break;
-                case SQLite:
-                    // TODO
+            if (dbms == DBMS.MySQL) {
+                stmt.executeUpdate(String.format("USE %s", Database.DATABASE_NAME));
+            }
+            String[] scripts = getScript().split(";");
+            for (String script : scripts) {
+                if (!script.trim().isEmpty()) {
+                    stmt.executeUpdate(script);
+                }
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -47,8 +48,22 @@ public class TableCreation {
                         FOREIGN KEY (autor_id) REFERENCES autores(id)
                     );
                     """;
-        } else {
-            // TODO
+        } else if (dbms == DBMS.SQLite) {
+            sql = """
+                    CREATE TABLE IF NOT EXISTS autores (
+                        id INTEGER PRIMARY KEY,
+                        nombre TEXT,
+                        apellidos TEXT
+                    );
+                                        
+                    CREATE TABLE IF NOT EXISTS libros (
+                        id INTEGER PRIMARY KEY,
+                        titulo TEXT NOT NULL,
+                        anio_publicacion INTEGER,
+                        autor_id INTEGER,
+                        FOREIGN KEY (autor_id) REFERENCES autores(id)
+                    );
+                    """;
         }
         return sql;
     }
