@@ -1,0 +1,58 @@
+Lista funcionalidades proyecto:
+- Inicio de sesión
+- Registro de sesión
+- Personalización de perfil:
+	- Elegir una imagen:
+		- Predetermida
+		- Subir una imagen propia
+	- Nombre de usuario
+	- Descripción de usuario
+	- Enlaces a redes sociales personales(Steam, Reddit, Twitter...)
+- Hacer busquedas de juego:
+	- Por titulo
+	- Por plataforma
+	- Por géneros
+	- Por valoración
+- Ver información sobre juegos:
+	- Portada
+	- Descripcion
+	- Plataforma
+	- Géneros
+- Crear listas de juegos
+- Personalización de listas:
+	- Título
+	- Descripción
+	- Privacidad:
+		- Pública
+		- Privada
+- Añadir estados a juegos:
+	- Jugado
+	- Jugando actualmente
+	- Pendiente de jugar
+- Valorar juegos:
+	- Nota sobre 10
+	- Descripción sobre la valoración
+- Sistema de recomendación de juegos basado en juegos guardados
+- Sistema de búsqueda aleatoria
+- Feed de últimos juegos añadidos a listas por otros usuarios
+- Búsquedas de usuarios
+- Ver perfil de otros usuarios
+- Ver listas de otros usuarios
+- Exportar listas de juegos a diferentes formatos:
+	- XML
+	- CSV
+	- PDF
+	- PNG
+
+
+
+
+
+
+
+
+
+
+
+
+
