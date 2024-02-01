@@ -16,12 +16,12 @@ public class Database {
 
     public void build(DatabaseConnection databaseConnection) {
         if (dbms == DBMS.MySQL) {
-            if (!databaseConnection.isExists()) {
+            if (!databaseConnection.isCreated()) {
                 Statement stmt;
                 try {
                     stmt = this.con.createStatement();
                     stmt.executeUpdate("CREATE DATABASE " + Database.DATABASE_NAME);
-                    databaseConnection.setExists(true);
+                    databaseConnection.setCreated(true);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

@@ -6,12 +6,16 @@ import java.sql.Statement;
 
 public class FillDatabase {
     private Connection con;
+    private boolean created;
 
-    public FillDatabase(Connection con) {
+    public FillDatabase(Connection con, boolean created) {
         this.con = con;
+        this.created = created;
     }
 
     public void fill() {
+        if (created)
+            return;
         Statement stmt = null;
         try {
             stmt = con.createStatement();

@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class DatabaseConnection {
     private DBMS dbms;
     private Connection con;
-    private boolean exists;
+    private boolean created;
 
     public DatabaseConnection(DBMS dbms) {
         this.dbms = dbms;
@@ -32,16 +32,15 @@ public class DatabaseConnection {
         this.con = con;
     }
 
-    public boolean isExists() {
-        return exists;
+    public boolean isCreated() {
+        return created;
     }
 
-    public void setExists(boolean exists) {
-        this.exists = exists;
+    public void setCreated(boolean created) {
+        this.created = created;
     }
 
     public Connection getConnection() {
-        Connection con = null;
         switch (this.dbms) {
             case MySQL:
                 checkMySQL();
@@ -56,8 +55,8 @@ public class DatabaseConnection {
     private void checkSQLite() {
         try {
             Path path = Paths.get(SQLite.DATABASE_FILE.getAbsolutePath());
-            this.exists = Files.exists(path);
-            if (exists) {
+            this.created = Files.exists(path);
+            if (created) {
                 System.out.println("La base de datos ya existe.");
                 System.out.print("Desea elminarla [s/n]: ");
                 Scanner sc = new Scanner(System.in);
@@ -67,7 +66,7 @@ public class DatabaseConnection {
                 }
             }
             this.con = DriverManager.getConnection(SQLite.getUrl());
-            this.exists = true;
+            this.created = true;
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
@@ -87,14 +86,14 @@ public class DatabaseConnection {
             }
 
             if (rows == 1) {
-                this.exists = true;
+                this.created = true;
                 System.out.println("La base de datos ya existe.");
                 System.out.print("Desea elminarla [s/n]: ");
                 Scanner sc = new Scanner(System.in);
                 char c = sc.nextLine().charAt(0);
                 if (c == 's' || c == 'S') {
                     stmt.executeUpdate("DROP DATABASE " + Database.DATABASE_NAME);
-                    this.exists = false;
+                    this.created = false;
                 }
             }
         } catch (SQLException e) {
