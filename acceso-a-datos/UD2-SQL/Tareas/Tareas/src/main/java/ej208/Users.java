@@ -18,11 +18,9 @@ public class Users {
     }
 
     public void add(User newUser) {
-        this.users.put(newUser.getId(), newUser);
-        if (DatabaseManager.addUser(newUser))
-            System.out.println("Usuario añadido a la bd");
-        else
-            remove(newUser.getId());
+        if (DatabaseManager.addUser(newUser)) {
+            this.users.put(newUser.getId(), newUser);
+        }
     }
 
     public void remove(int id) {

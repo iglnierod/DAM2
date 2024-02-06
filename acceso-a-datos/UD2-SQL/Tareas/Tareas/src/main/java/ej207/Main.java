@@ -36,11 +36,12 @@ public class Main {
                 }
             }
 
-            String[] commands = text.toString().split(separator);
-            //System.out.println(Arrays.deepToString(commands));
+            String[] commands = text.toString().trim().split(separator);
+            System.out.println(Arrays.deepToString(commands));
             for (int i = 0; i < commands.length; i++) {
                 execute(con, commands[i]);
             }
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -52,8 +53,7 @@ public class Main {
 
     static boolean containsInArray(String[] array, String string) {
         for (String s : array) {
-            if (string.startsWith(s))
-                return true;
+            if (string.startsWith(s)) return true;
         }
         return false;
     }
@@ -74,15 +74,6 @@ public class Main {
         String blockCommentStartDelimiter = "/*";
         String blockCommentEndDelimiter = "*/";
 
-        ScriptUtils.executeSqlScript(
-                con,
-                new EncodedResource(new PathResource(path)),
-                continueOrError,
-                ignoreFailedDrops,
-                commentPrefix,
-                separator,
-                blockCommentStartDelimiter,
-                blockCommentEndDelimiter
-        );
+        ScriptUtils.executeSqlScript(con, new EncodedResource(new PathResource(path)), continueOrError, ignoreFailedDrops, commentPrefix, separator, blockCommentStartDelimiter, blockCommentEndDelimiter);
     }
 }

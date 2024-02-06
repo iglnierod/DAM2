@@ -1,6 +1,7 @@
 package ej208;
 
 import java.io.File;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
@@ -20,8 +21,17 @@ public class App {
         this.dataFile = dataFile;
         this.users = new Users();
         this.songs = new Songs();
+
         DatabaseManager.buildDatabase();
-        printMenu();
+//        if (DatabaseManager.databaseExists()) {
+//            printMenu();
+//        } else {
+//            DatabaseManager.buildDatabase();
+//        }
+    }
+
+    private void login() {
+
     }
 
     private void printMenu() {
@@ -29,57 +39,46 @@ public class App {
         do {
             Scanner sc = new Scanner(System.in);
             System.out.println("\n1. Cargar canciones desde JSON");
+            System.out.println("2. Insertar canción");
             System.out.println("9. Salir");
             System.out.print("Opción: ");
             option = sc.nextInt();
             sc.nextLine();
             System.out.println();
             switch (option) {
-                case 1:
-                    System.out.println("Leyendo fichero json: " + this.dataFile.getAbsolutePath());
-                    FileHandler.loadData(this.dataFile, this.songs, this.users);
-                    //
-                    System.out.println("Songs:");
-                    System.out.println(songs);
-                    System.out.println("Users:");
-                    System.out.println(users);
-                    break;
-                case 9:
-                    System.out.println("Saliendo...");
-                    break;
+                case 1 -> loadData(); // Cargar canciones desde JSON
+                case 2 -> addSong(); // Insertar canción
+                case 9 -> System.out.println("Saliendo...");
             }
         } while (option != 9);
     }
 
-    public Users getUsers() {
-        return users;
+    // MENU OPTIONS
+    private void loadData() {
+        System.out.println("Leyendo fichero json: " + this.dataFile.getAbsolutePath());
+        FileHandler.loadData(this.dataFile, this.songs, this.users);
+        //
+        System.out.println("Songs:");
+        System.out.println(songs);
+        System.out.println("Users:");
+        System.out.println(users);
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
-    }
+    private void addSong() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        System.out.println("Añadir canción:");
+        System.out.print("Título: ");
+        String title = sc.nextLine();
+        System.out.print("Artista: ");
+        String artist = sc.nextLine();
+        System.out.print("Duración (segundos): ");
+        int length = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Año lanzamiento (YYYY): ");
+        int year = sc.nextInt();
+        sc.nextLine();
 
-    public User getCurrentUser() {
-        return currentUser;
-    }
-
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
-    }
-
-    public Songs getSongs() {
-        return songs;
-    }
-
-    public void setSongs(Songs songs) {
-        this.songs = songs;
-    }
-
-    public File getDataFile() {
-        return dataFile;
-    }
-
-    public void setDataFile(File dataFile) {
-        this.dataFile = dataFile;
+        this.songs.add(new Song(title, artist, length, year));
     }
 }

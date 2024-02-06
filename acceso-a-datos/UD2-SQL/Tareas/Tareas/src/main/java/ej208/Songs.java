@@ -18,9 +18,9 @@ public class Songs {
     }
 
     public void add(Song newSong) {
-        this.songs.put(newSong.getId(), newSong);
-        if(DatabaseManager.addSong(newSong))
-            System.out.println("Añadida cancion a la bd");
+        if (DatabaseManager.addSong(newSong)) {
+            this.songs.put(newSong.getId(), newSong);
+        }
     }
 
     public void remove(int id) {

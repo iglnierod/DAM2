@@ -20,7 +20,8 @@ public class FileHandler {
                 int length = song.get("duracion").getAsInt();
                 int year = song.get("anio").getAsInt();
 
-                Song newSong = new Song(i+1, title, artist, length, year);
+                Song newSong = new Song(title, artist, length, year);
+                System.out.println(newSong);
                 songs.add(newSong);
             }
 
@@ -32,7 +33,8 @@ public class FileHandler {
                 String name = user.get("nombre").getAsString();
                 String email = user.get("correo").getAsString();
 
-                User newUser = new User(i+1, username, name, email);
+                User newUser = new User(username, name, email);
+                System.out.println(newUser);
                 users.add(newUser);
             }
         } catch (IOException e) {

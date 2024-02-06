@@ -15,6 +15,14 @@ public class Song {
         this.year = year;
     }
 
+    public Song(String title, String artist, int length, int year) {
+        this.id = -1;
+        this.title = title;
+        this.artist = artist;
+        this.length = length;
+        this.year = year;
+    }
+
     public int getId() {
         return id;
     }
@@ -57,12 +65,6 @@ public class Song {
 
     @Override
     public String toString() {
-        return "Song{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", length=" + length +
-                ", year=" + year +
-                '}';
+        return "Song{" + "id=" + id + ", title='" + title + '\'' + ", artist='" + artist + '\'' + ", length=" + length + ", year=" + year + '}';
     }
 }
