@@ -1,0 +1,39 @@
+{
+  "canciones": [
+    {
+      "titulo": "Shape of You",
+      "artista": "Ed Sheeran",
+      "duracion": 235,
+      "anio": 2017
+    },
+    {
+      "titulo": "Blinding Lights",
+      "artista": "The Weeknd",
+      "duracion": 200,
+      "anio": 2019
+    },
+    {
+      "titulo": "Watermelon Sugar",
+      "artista": "Harry Styles",
+      "duracion": 174,
+      "anio": 2020
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre_usuario": "musiclover123",
+      "nombre": "Emily Johnson",
+      "correo": "emily@example.com"
+    },
+    {
+      "nombre_usuario": "guitarhero",
+      "nombre": "Alex Rodriguez",
+      "correo": "alex@example.com"
+    },
+    {
+      "nombre_usuario": "dancequeen",
+      "nombre": "Sophia Kim",
+      "correo": "sophia@example.com"
+    }
+  ]
+}
