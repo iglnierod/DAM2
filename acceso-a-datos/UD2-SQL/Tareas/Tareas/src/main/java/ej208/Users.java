@@ -6,7 +6,7 @@ public class Users {
     private HashMap<Integer, User> users;
 
     public Users() {
-        users = new HashMap<>();
+        users = DatabaseManager.getAllUsers();
     }
 
     public Users(HashMap<Integer, User> users) {
@@ -15,6 +15,14 @@ public class Users {
 
     public User get(int id) {
         return this.users.get(id);
+    }
+
+    public User get(String username) {
+        for (User u : users.values()) {
+            if (u.getUsername().equals(username))
+                return u;
+        }
+        return null;
     }
 
     public void add(User newUser) {

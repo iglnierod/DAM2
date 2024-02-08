@@ -1,12 +1,19 @@
 package ej208;
 
+import ej205.SQLite;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.support.EncodedResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
 import query.ANSI;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class DatabaseManager {
     private static final File DATABASE = new File(App.DIR_SQL, "gestor_musica.sqlite");
@@ -27,6 +34,7 @@ public class DatabaseManager {
                 newSong.setId(id);
             }
 
+            printInformation("Se ha añadido la canción: [" + newSong.getId() + "] " + newSong.getTitle());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,9 +57,33 @@ public class DatabaseManager {
                 newUser.setId(id);
             }
 
+            printInformation("Se ha añadido el usuario: [" + newUser.getId() + "] " + newUser.getUsername());
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            DatabaseManager.printError("No se ha podido añadir el usuario");
+            return false;
+        }
+    }
+
+    public static boolean addPlaylist(Playlist newPlaylist) {
+        String query = "INSERT INTO listas_reproduccion(nombre_lista, id_usuario) VALUES (?,?)";
+        try (PreparedStatement ps = getConnection().prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, newPlaylist.getName());
+            ps.setInt(2, newPlaylist.getCreator().getId());
+
+            ps.executeUpdate();
+
+            ResultSet keys = ps.getGeneratedKeys();
+            while (keys.next()) {
+                int id = keys.getInt(1);
+                newPlaylist.setId(id);
+            }
+
+            printInformation("Se ha añadido la playlist: [" + newPlaylist.getId() + "] " + newPlaylist.getName());
+            return true;
+        } catch (SQLException e) {
+            printError("No se ha podido añadir la playlist");
             return false;
         }
     }
@@ -59,7 +91,7 @@ public class DatabaseManager {
     public static void buildDatabase() {
         try {
             executeSqlScript(getConnection(), new File(App.DIR_SQL, "crear.sql"));
-            printWarning("Se ha creado la base de datos");
+            printInformation("Se ha creado la base de datos");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -74,8 +106,27 @@ public class DatabaseManager {
         return DriverManager.getConnection(url);
     }
 
-    public static void printWarning(String mensaje) {
-        System.out.println(ANSI.YELLOW_BACKGROUND + ANSI.BLACK + mensaje + ANSI.RESET);
+
+    public static boolean check() {
+        try {
+            Path path = Paths.get(DATABASE.getAbsolutePath());
+            if (Files.exists(path)) {
+                printInformation("La base de datos ya existe.");
+                printWarningInput("Desea elminarla [S/N]:");
+                Scanner sc = new Scanner(System.in);
+                char c = sc.nextLine().charAt(0);
+                if (c == 's' || c == 'S') {
+                    Files.delete(path);
+                    printWarning("Se ha borrado la base de datos");
+                } else {
+                    return true;
+                }
+            }
+            buildDatabase();
+            return false;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void executeSqlScript(Connection con, File file) {
@@ -97,5 +148,45 @@ public class DatabaseManager {
                 blockCommentStartDelimiter,
                 blockCommentEndDelimiter
         );
+    }
+
+    public static void printWarning(String message) {
+        message = " WARNING: " + message + " ";
+        System.out.println(ANSI.YELLOW_BACKGROUND + ANSI.BLACK + message + ANSI.RESET);
+    }
+
+    public static void printInformation(String message) {
+        message = String.format(" INFORMATION: %s ", message);
+        System.out.println(ANSI.BLUE_BACKGROUND + ANSI.BLACK + message + ANSI.RESET);
+    }
+
+    public static void printWarningInput(String message) {
+        message = String.format(" WARNING: %s ", message);
+        System.out.print(ANSI.YELLOW_BACKGROUND + ANSI.BLACK + message + ANSI.RESET + " ");
+    }
+
+    public static void printError(String message) {
+        message = String.format(" ERROR: %s ", message);
+        System.out.println(ANSI.RED_BACKGROUND + ANSI.BLACK + message + ANSI.RESET);
+    }
+
+    public static HashMap<Integer, User> getAllUsers() {
+        HashMap<Integer, User> users = new HashMap<>();
+        try (Statement stmt = getConnection().createStatement()) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM usuarios;");
+            while (rs.next()) {
+                User u = new User(
+                        rs.getInt("id"),
+                        rs.getString("nombre_usuario"),
+                        rs.getString("nombre"),
+                        rs.getString("correo")
+                );
+                users.put(u.getId(), u);
+            }
+            return users;
+        } catch (SQLException e) {
+            printError("No se han podido cargar los usuarios de la base de datos");
+            return new HashMap<>();
+        }
     }
 }

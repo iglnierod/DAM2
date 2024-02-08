@@ -21,7 +21,6 @@ public class FileHandler {
                 int year = song.get("anio").getAsInt();
 
                 Song newSong = new Song(title, artist, length, year);
-                System.out.println(newSong);
                 songs.add(newSong);
             }
 
@@ -34,7 +33,6 @@ public class FileHandler {
                 String email = user.get("correo").getAsString();
 
                 User newUser = new User(username, name, email);
-                System.out.println(newUser);
                 users.add(newUser);
             }
         } catch (IOException e) {
