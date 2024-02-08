@@ -19,15 +19,16 @@ public class App {
     }
 
     public App(File dataFile) {
+        boolean isDataLoaded = DatabaseManager.check();
         this.dataFile = dataFile;
         this.users = new Users();
         this.songs = new Songs();
         this.playlists = new Playlists();
 
-        boolean isDataLoaded = DatabaseManager.check();
         if (!isDataLoaded) {
             loadData();
         }
+
         login();
     }
 
@@ -43,6 +44,7 @@ public class App {
             printMenu();
         } else {
             DatabaseManager.printError("El usuario no existe");
+            login();
         }
     }
 
@@ -53,30 +55,24 @@ public class App {
             System.out.println("\n1. Cargar canciones desde JSON");
             System.out.println("2. Insertar canción");
             System.out.println("3. Crear usuario");
-            System.out.println("4. Crear lista de reproducción");
+            System.out.println("4. Crear playlist");
+            System.out.println("5. Añadir canción a playlist");
             System.out.println("9. Salir");
             System.out.print("Opción: ");
             option = sc.nextInt();
             sc.nextLine();
             System.out.println();
             switch (option) {
-                case 1 -> loadData(); // Cargar canciones desde JSON
-                case 2 -> addSong(); // Insertar canción
-                case 3 -> createUser(); // Crear usuario
-                case 4 -> createPlaylist(); // Crear lista de reproducción
+                case 1 -> loadData();
+                case 2 -> addSong();
+                case 3 -> createUser();
+                case 4 -> createPlaylist();
+                case 5 -> addSongToPlaylist();
                 case 9 -> System.out.println("Saliendo...");
             }
         } while (option != 9);
     }
 
-    private void createPlaylist() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Crear lista de reproducción:");
-        System.out.print("Nombre: ");
-        String name = sc.nextLine();
-
-        this.playlists.add(new Playlist(name, this.currentUser));
-    }
 
     // MENU OPTIONS
     private void loadData() {
@@ -112,5 +108,23 @@ public class App {
         String email = sc.nextLine();
 
         this.users.add(new User(username, user, email));
+    }
+
+    private void createPlaylist() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Crear lista de reproducción:");
+        System.out.print("Nombre: ");
+        String name = sc.nextLine();
+
+        this.playlists.add(new Playlist(name, this.currentUser.getId()));
+    }
+
+    private void addSongToPlaylist() {
+        System.out.println("Añadir cancion a playlist:");
+        this.songs.printList();
+        System.out.print("Introduzca la [id] de la canción: ");
+        Scanner sc = new Scanner(System.in);
+        int songId = sc.nextInt();
+        sc.nextLine();
     }
 }

@@ -34,6 +34,11 @@
       "nombre_usuario": "dancequeen",
       "nombre": "Sophia Kim",
       "correo": "sophia@example.com"
+    },
+    {
+      "nombre_usuario": "a",
+      "nombre": "Test",
+      "correo": "test@example.com"
     }
   ]
 }

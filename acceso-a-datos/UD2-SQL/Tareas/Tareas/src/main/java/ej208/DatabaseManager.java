@@ -1,6 +1,5 @@
 package ej208;
 
-import ej205.SQLite;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.support.EncodedResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
@@ -12,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -70,7 +70,7 @@ public class DatabaseManager {
         String query = "INSERT INTO listas_reproduccion(nombre_lista, id_usuario) VALUES (?,?)";
         try (PreparedStatement ps = getConnection().prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, newPlaylist.getName());
-            ps.setInt(2, newPlaylist.getCreator().getId());
+            ps.setInt(2, newPlaylist.getUser());
 
             ps.executeUpdate();
 
@@ -173,7 +173,7 @@ public class DatabaseManager {
     public static HashMap<Integer, User> getAllUsers() {
         HashMap<Integer, User> users = new HashMap<>();
         try (Statement stmt = getConnection().createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM usuarios;");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM usuarios");
             while (rs.next()) {
                 User u = new User(
                         rs.getInt("id"),
@@ -186,7 +186,69 @@ public class DatabaseManager {
             return users;
         } catch (SQLException e) {
             printError("No se han podido cargar los usuarios de la base de datos");
+            e.printStackTrace();
             return new HashMap<>();
+        }
+    }
+
+    public static HashMap<Integer, Song> getAllSongs() {
+        HashMap<Integer, Song> songs = new HashMap<>();
+        try (Statement stmt = getConnection().createStatement()) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM canciones");
+            while (rs.next()) {
+                Song s = new Song(
+                        rs.getInt("id"),
+                        rs.getString("titulo"),
+                        rs.getString("artista"),
+                        rs.getInt("duracion"),
+                        rs.getInt("anio")
+                );
+                songs.put(s.getId(), s);
+            }
+            return songs;
+        } catch (SQLException e) {
+            printError("No se han podido cargar las canciones de la base de datos");
+            e.printStackTrace();
+            return new HashMap<>();
+        }
+    }
+
+    public static HashMap<Integer, Playlist> getAllPlaylists() {
+        HashMap<Integer, Playlist> playlists = new HashMap<>();
+        try (Statement stmt = getConnection().createStatement()) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM listas_reproduccion");
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                Playlist s = new Playlist(
+                        id,
+                        rs.getString("nombre_lista"),
+                        rs.getInt("id_usuario"),
+                        getAllSongsInPlaylist(id)
+                );
+                playlists.put(s.getId(), s);
+            }
+            return playlists;
+        } catch (SQLException e) {
+            printError("No se han podido cargar las playlist de la base de datos");
+            e.printStackTrace();
+            return new HashMap<>();
+        }
+    }
+
+    public static ArrayList<Integer> getAllSongsInPlaylist(int playlistId) {
+        String query = "SELECT id_cancion FROM listas_canciones WHERE id_lista = ?";
+        ArrayList<Integer> songs = new ArrayList<>();
+        try (PreparedStatement ps = getConnection().prepareStatement(query)) {
+            ps.setInt(1, playlistId);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                songs.add(rs.getInt("id_cancion"));
+            }
+            return songs;
+        } catch (SQLException e) {
+            printError("No se han podido cargar las canciones de las playlist de la base de datos");
+            return new ArrayList<>();
         }
     }
 }

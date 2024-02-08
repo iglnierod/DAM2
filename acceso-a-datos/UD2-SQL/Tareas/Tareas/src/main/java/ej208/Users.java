@@ -6,11 +6,15 @@ public class Users {
     private HashMap<Integer, User> users;
 
     public Users() {
-        users = DatabaseManager.getAllUsers();
+        this.users = getAllUsers();
     }
 
     public Users(HashMap<Integer, User> users) {
-        this.users = users;
+        if(users == null) {
+            this.users = new HashMap<>();
+        } else {
+            this.users = users;
+        }
     }
 
     public User get(int id) {
@@ -41,5 +45,9 @@ public class Users {
         for (User u : users.values())
             sb.append(u.toString()).append("\n");
         return sb.toString();
+    }
+
+    public static HashMap<Integer, User> getAllUsers() {
+        return DatabaseManager.getAllUsers();
     }
 }

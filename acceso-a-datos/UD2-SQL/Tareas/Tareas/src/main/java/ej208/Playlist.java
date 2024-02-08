@@ -1,27 +1,36 @@
 package ej208;
 
+import java.util.ArrayList;
+
 public class Playlist {
     private int id;
     private String name;
-    private User creator;
-    private Songs songs;
+    private int user;
+    private ArrayList<Integer> songs;
 
-    public Playlist(String name, User creator) {
+    public Playlist(String name, int user) {
         this.id = -1;
         this.name = name;
-        this.creator = creator;
-        this.songs = new Songs();
+        this.user = user;
+        this.songs = new ArrayList<>();
     }
 
-    public Playlist(String name, User creator, Songs songs) {
+    public Playlist(String name, int user, ArrayList<Integer> songs) {
         this.id = -1;
         this.name = name;
-        this.creator = creator;
+        this.user = user;
         this.songs = songs;
     }
 
-    public void addSong(Song newSong) {
-        this.songs.add(newSong);
+    public Playlist(int id, String name, int user, ArrayList<Integer> songs) {
+        this.id = id;
+        this.name = name;
+        this.user = user;
+        this.songs = songs;
+    }
+
+    public void addSong(int songId) {
+        this.songs.add(songId);
     }
 
     public int getId() {
@@ -40,19 +49,15 @@ public class Playlist {
         this.name = name;
     }
 
-    public User getCreator() {
-        return creator;
+    public int getUser() {
+        return user;
     }
 
-    public void setCreator(User creator) {
-        this.creator = creator;
+    public void setUser(int user) {
+        this.user = user;
     }
 
-    public Songs getSongs() {
-        return songs;
-    }
-
-    public void setSongs(Songs songs) {
+    public void setSongs(ArrayList<Integer> songs) {
         this.songs = songs;
     }
 
@@ -61,7 +66,7 @@ public class Playlist {
         return "Playlist{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", creator=" + creator +
+                ", creator=" + user +
                 ", songs=" + songs +
                 '}';
     }
