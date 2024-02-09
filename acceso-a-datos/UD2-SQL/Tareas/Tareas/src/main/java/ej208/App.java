@@ -1,7 +1,6 @@
 package ej208;
 
 import java.io.File;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
@@ -57,6 +56,7 @@ public class App {
             System.out.println("3. Crear usuario");
             System.out.println("4. Crear playlist");
             System.out.println("5. Añadir canción a playlist");
+            System.out.println("6. Eliminar playlist");
             System.out.println("9. Salir");
             System.out.print("Opción: ");
             option = sc.nextInt();
@@ -68,6 +68,7 @@ public class App {
                 case 3 -> createUser();
                 case 4 -> createPlaylist();
                 case 5 -> addSongToPlaylist();
+                case 6 -> deletePlaylist();
                 case 9 -> System.out.println("Saliendo...");
             }
         } while (option != 9);
@@ -76,7 +77,7 @@ public class App {
 
     // MENU OPTIONS
     private void loadData() {
-        DatabaseManager.printInformation("Leyendo fichero json: " + this.dataFile.getAbsolutePath());
+        DatabaseManager.printInformation("Leyendo fichero JSON: " + this.dataFile.getAbsolutePath());
         FileHandler.loadData(this.dataFile, this.songs, this.users);
     }
 
@@ -121,10 +122,47 @@ public class App {
 
     private void addSongToPlaylist() {
         System.out.println("Añadir cancion a playlist:");
-        this.songs.printList();
-        System.out.print("Introduzca la [id] de la canción: ");
+        String songsList = this.songs.getSongsList();
+        if (songsList == null) {
+            return;
+        }
+        System.out.print("Introduzca el [id] de la canción: ");
         Scanner sc = new Scanner(System.in);
         int songId = sc.nextInt();
         sc.nextLine();
+        System.out.println("Seleccione a que playlist añadirla: ");
+        String playlistsList = this.playlists.getPlaylistsList(this.currentUser.getId());
+        if (playlistsList == null) {
+            return;
+        }
+        System.out.println(playlistsList);
+        System.out.print("Introduza el [id] de la playlist: ");
+        int playlistId = sc.nextInt();
+        System.out.println();
+        sc.nextLine();
+        Playlist p = this.playlists.getPlaylist(playlistId);
+        if(p == null) {
+            return;
+        }
+        p.addSong(songId);
+    }
+
+    private void deletePlaylist() {
+        System.out.println("Eliminar una playlist:");
+        String playlistsList = this.playlists.getPlaylistsList(this.currentUser.getId());
+        if (playlistsList == null) {
+            return;
+        }
+        System.out.println(playlistsList);
+        System.out.print("Introduza el [id] de la playlist: ");
+        Scanner sc = new Scanner(System.in);
+        int playlistId = sc.nextInt();
+        System.out.println();
+        sc.nextLine();
+        DatabaseManager.printWarningInput("Desea eliminar la playlist con id [" + playlistId + "] (S/N): ");
+        char c = sc.nextLine().charAt(0);
+        if (c == 's' || c == 'S') {
+            this.playlists.delete(playlistId);
+        }
     }
 }

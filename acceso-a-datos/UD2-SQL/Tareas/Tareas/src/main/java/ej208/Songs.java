@@ -2,6 +2,7 @@ package ej208;
 
 import query.ANSI;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Songs {
@@ -29,10 +30,18 @@ public class Songs {
         this.songs.remove(id);
     }
 
-    public void printList() {
-        for (Song s : songs.values()) {
+    public String getSongsList() {
+        Collection<Song> songs = this.songs.values();
+        if (songs.size() == 0) {
+            DatabaseManager.printError("No hay ninguna canción.");
+            return null;
+        }
+
+        StringBuilder songsList = new StringBuilder();
+        for (Song s : songs) {
             System.out.printf("%s%s[%2d] %-20s - %-15s (%4d)%s\n", ANSI.PURPLE_BACKGROUND, ANSI.BLACK, s.getId(), s.getTitle(), s.getArtist(), s.getYear(), ANSI.RESET);
         }
+        return songsList.toString();
     }
 
     @Override

@@ -1,13 +1,15 @@
 package ej208;
 
+import java.util.ArrayList;
+
 public class User {
     private int id;
     private String username;
     private String user;
     private String email;
-
+    private ArrayList<Integer> playlists;
     public User() {
-
+        this.playlists = new ArrayList<>();
     }
 
     public User(int id, String username, String user, String email) {
@@ -15,6 +17,7 @@ public class User {
         this.username = username;
         this.user = user;
         this.email = email;
+        this.playlists = new ArrayList<>();
     }
 
     public User(String username, String user, String email) {
@@ -22,6 +25,7 @@ public class User {
         this.username = username;
         this.user = user;
         this.email = email;
+        this.playlists = new ArrayList<>();
     }
 
     public int getId() {

@@ -1,5 +1,6 @@
 package ej208;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class Playlist {
@@ -30,7 +31,10 @@ public class Playlist {
     }
 
     public void addSong(int songId) {
-        this.songs.add(songId);
+        if (DatabaseManager.addSongToPlaylist(this.id, songId)) {
+            this.songs.add(songId);
+            DatabaseManager.printInformation("Se ha añadido la cancion: " + songId + " a la playlist " + this.id);
+        }
     }
 
     public int getId() {

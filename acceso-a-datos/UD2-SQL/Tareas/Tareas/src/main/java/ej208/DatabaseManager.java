@@ -251,4 +251,29 @@ public class DatabaseManager {
             return new ArrayList<>();
         }
     }
+
+    public static boolean addSongToPlaylist(int playlistId, int songId) {
+        String query = "INSERT INTO listas_canciones VALUES(?,?)";
+        try (PreparedStatement ps = getConnection().prepareStatement(query)) {
+            ps.setInt(1, playlistId);
+            ps.setInt(2, songId);
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            printError("No se ha podido añadir la canción a la playlist en la base de datos");
+            return false;
+        }
+    }
+
+    public static boolean deletePlaylist(int playlistId) {
+        try (Statement stmt = getConnection().createStatement()) {
+            stmt.executeUpdate(String.format("DELETE FROM listas_canciones WHERE id_lista = %d", playlistId));
+            stmt.executeUpdate(String.format("DELETE FROM listas_reproduccion WHERE id = %d", playlistId));
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
