@@ -6,7 +6,6 @@ import java.net.Socket;
 public class Client implements Runnable {
     private Contador c;
     private String name;
-    private static volatile boolean stopCreatingClients = false;
 
     public Client(String name, Contador c) {
         this.name = name;

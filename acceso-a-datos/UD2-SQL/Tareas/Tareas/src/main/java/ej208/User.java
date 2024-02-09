@@ -8,6 +8,7 @@ public class User {
     private String user;
     private String email;
     private ArrayList<Integer> playlists;
+
     public User() {
         this.playlists = new ArrayList<>();
     }
@@ -60,6 +61,22 @@ public class User {
         this.email = email;
     }
 
+    public ArrayList<Integer> getPlaylists() {
+        return playlists;
+    }
+
+    public void setPlaylists(ArrayList<Integer> playlists) {
+        this.playlists = playlists;
+    }
+
+    public void addToPlaylists(int playlistId) {
+        this.playlists.add(playlistId);
+    }
+
+    public void deletePlaylist(int playlistId) {
+
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -69,4 +86,6 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+
 }

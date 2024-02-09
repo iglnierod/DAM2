@@ -12,9 +12,18 @@ public class Playlists {
         playlists = getAllPlaylists();
     }
 
-    public void add(Playlist newPlaylist) {
+    public void assignPlaylistsToUsers(Users users) {
+        for(Playlist p : playlists.values()) {
+            User u = users.get(p.getUser());
+            u.addToPlaylists(p.getId());
+        }
+    }
+
+    public void add(Playlist newPlaylist, User user) {
         if (DatabaseManager.addPlaylist(newPlaylist)) {
-            this.playlists.put(newPlaylist.getId(), newPlaylist);
+            int newPlaylistId = newPlaylist.getId();
+            this.playlists.put(newPlaylistId, newPlaylist);
+            user.addToPlaylists(newPlaylistId);
         }
     }
 
@@ -59,9 +68,10 @@ public class Playlists {
         return sb.toString();
     }
 
-    public void delete(int playlistId) {
+    public void delete(int playlistId, User user) {
         if(DatabaseManager.deletePlaylist(playlistId)) {
             this.playlists.remove(playlistId);
+            user.deletePlaylist(playlistId);
             DatabaseManager.printWarning("Se ha eliminado la playlist");
         } else {
             DatabaseManager.printError("No se ha podido eliminar la playlist");

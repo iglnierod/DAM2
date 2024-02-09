@@ -46,11 +46,10 @@ public class Server {
                     outputStream.write(confirmationMessage.getBytes());
                 }
 
-                wait();
                 inputStream.close();
                 outputStream.close();
                 clientSocket.close();
-            } catch (IOException | InterruptedException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

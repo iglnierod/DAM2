@@ -28,6 +28,8 @@ public class App {
             loadData();
         }
 
+        this.playlists.assignPlaylistsToUsers(this.users);
+
         login();
     }
 
@@ -117,7 +119,10 @@ public class App {
         System.out.print("Nombre: ");
         String name = sc.nextLine();
 
-        this.playlists.add(new Playlist(name, this.currentUser.getId()));
+        this.playlists.add(
+                new Playlist(name, this.currentUser.getId()),
+                this.currentUser
+        );
     }
 
     private void addSongToPlaylist() {
@@ -141,7 +146,7 @@ public class App {
         System.out.println();
         sc.nextLine();
         Playlist p = this.playlists.getPlaylist(playlistId);
-        if(p == null) {
+        if (p == null) {
             return;
         }
         p.addSong(songId);
@@ -162,7 +167,7 @@ public class App {
         DatabaseManager.printWarningInput("Desea eliminar la playlist con id [" + playlistId + "] (S/N): ");
         char c = sc.nextLine().charAt(0);
         if (c == 's' || c == 'S') {
-            this.playlists.delete(playlistId);
+            this.playlists.delete(playlistId, this.currentUser);
         }
     }
 }
