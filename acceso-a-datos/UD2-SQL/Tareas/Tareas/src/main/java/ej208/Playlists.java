@@ -13,7 +13,7 @@ public class Playlists {
     }
 
     public void assignPlaylistsToUsers(Users users) {
-        for(Playlist p : playlists.values()) {
+        for (Playlist p : playlists.values()) {
             User u = users.get(p.getUser());
             u.addToPlaylists(p.getId());
         }
@@ -27,10 +27,13 @@ public class Playlists {
         }
     }
 
-    public Playlist getPlaylist(int playlistId) {
+    public Playlist getPlaylist(int playlistId, int currentUserId) {
         Playlist p = this.playlists.get(playlistId);
-        if(p == null) {
+        if (p == null) {
             DatabaseManager.printError("La playlist con id: " + playlistId + " no existe");
+        } else if (p.getUser() != currentUserId) {
+            p = null;
+            DatabaseManager.printError("No se ha podido añadir la canción a la playlist");
         }
         return p;
     }
@@ -41,7 +44,7 @@ public class Playlists {
 
     public String getPlaylistsList(int userId) {
         ArrayList<Playlist> userPlaylists = getPlaylistsByUser(userId);
-        if (userPlaylists.size() == 0) {
+        if (userPlaylists.isEmpty()) {
             DatabaseManager.printError("No tiene ninguna playlist");
             return null;
         }
@@ -69,12 +72,14 @@ public class Playlists {
     }
 
     public void delete(int playlistId, User user) {
-        if(DatabaseManager.deletePlaylist(playlistId)) {
-            this.playlists.remove(playlistId);
-            user.deletePlaylist(playlistId);
-            DatabaseManager.printWarning("Se ha eliminado la playlist");
-        } else {
-            DatabaseManager.printError("No se ha podido eliminar la playlist");
+        if (this.playlists.get(playlistId).getUser() == user.getId()) {
+            if (DatabaseManager.deletePlaylist(playlistId)) {
+                this.playlists.remove(playlistId);
+                user.deletePlaylist(playlistId);
+                DatabaseManager.printWarning("Se ha eliminado la playlist");
+                return;
+            }
         }
+        DatabaseManager.printError("No se ha podido eliminar la playlist");
     }
 }

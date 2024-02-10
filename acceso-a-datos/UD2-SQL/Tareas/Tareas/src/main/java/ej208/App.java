@@ -31,6 +31,24 @@ public class App {
         this.playlists.assignPlaylistsToUsers(this.users);
 
         login();
+
+        /* TODO: XML EXPORT */
+/*            <app>
+        <canciones>
+            <cancion id="?" titulo="" />
+        </canciones>
+
+        <usuarios>
+            <usuario id="?" nombre_usuario="" nombre="">
+                <playlists>
+                    <playlist id="?" nombre="?">
+                        <cancion id="?" titulo="" />
+                    </playlist>
+                </playlists>
+            </usuario>
+        </usuarios>
+
+    </app>*/
     }
 
     private void login() {
@@ -52,7 +70,6 @@ public class App {
     private void printMenu() {
         int option;
         do {
-            Scanner sc = new Scanner(System.in);
             System.out.println("\n1. Cargar canciones desde JSON");
             System.out.println("2. Insertar canción");
             System.out.println("3. Crear usuario");
@@ -61,6 +78,7 @@ public class App {
             System.out.println("6. Eliminar playlist");
             System.out.println("9. Salir");
             System.out.print("Opción: ");
+            Scanner sc = new Scanner(System.in);
             option = sc.nextInt();
             sc.nextLine();
             System.out.println();
@@ -145,7 +163,7 @@ public class App {
         int playlistId = sc.nextInt();
         System.out.println();
         sc.nextLine();
-        Playlist p = this.playlists.getPlaylist(playlistId);
+        Playlist p = this.playlists.getPlaylist(playlistId, this.currentUser.getId());
         if (p == null) {
             return;
         }

@@ -8,6 +8,7 @@ public class User {
     private String user;
     private String email;
     private ArrayList<Integer> playlists;
+    // VENGO AHORA
 
     public User() {
         this.playlists = new ArrayList<>();
@@ -86,6 +87,4 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
-
-
 }

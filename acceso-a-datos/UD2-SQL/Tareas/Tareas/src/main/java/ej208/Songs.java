@@ -32,7 +32,7 @@ public class Songs {
 
     public String getSongsList() {
         Collection<Song> songs = this.songs.values();
-        if (songs.size() == 0) {
+        if (songs.isEmpty()) {
             DatabaseManager.printError("No hay ninguna canción.");
             return null;
         }
