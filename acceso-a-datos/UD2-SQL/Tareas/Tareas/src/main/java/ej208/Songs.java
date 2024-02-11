@@ -52,6 +52,14 @@ public class Songs {
         return sb.toString();
     }
 
+    public void printAllSongs() {
+        System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + "CANCIONES: " + ANSI.RESET);
+        System.out.printf("%s%s %-10s %-30s %-25s %10s %10s %s%n", ANSI.WHITE_BACKGROUND, ANSI.BLACK, "ID", "TITULO", "ARTISTA", "DURACION", "AÑO", ANSI.RESET);
+        for (Song s : songs.values()) {
+            System.out.printf("%s%s %-10s %-30s %-25s %10s %10s %s%n", ANSI.WHITE_BACKGROUND, ANSI.BLACK, s.getId(), s.getTitle(), s.getArtist(), s.getLength(), s.getYear(), ANSI.RESET);
+        }
+    }
+
     public static HashMap<Integer, Song> getAllSongs() {
         return DatabaseManager.getAllSongs();
     }

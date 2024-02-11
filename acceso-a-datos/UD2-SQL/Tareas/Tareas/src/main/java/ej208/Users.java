@@ -1,5 +1,7 @@
 package ej208;
 
+import query.ANSI;
+
 import java.util.HashMap;
 
 public class Users {
@@ -10,7 +12,7 @@ public class Users {
     }
 
     public Users(HashMap<Integer, User> users) {
-        if(users == null) {
+        if (users == null) {
             this.users = new HashMap<>();
         } else {
             this.users = users;
@@ -50,4 +52,14 @@ public class Users {
     public static HashMap<Integer, User> getAllUsers() {
         return DatabaseManager.getAllUsers();
     }
+
+    public void printAllUsers() {
+        System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + "USUARIOS: " + ANSI.RESET);
+        System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + String.format(" %-10s %-25s %-20s %-20s", "ID", "NOMBRE DE USUARIO", "NOMBRE", "EMAIL") + ANSI.RESET);
+
+        for (User u : this.users.values()) {
+            System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + String.format(" %-10s %-25s %-20s %-20s", u.getId(), u.getUsername(), u.getUser(), u.getEmail()) + ANSI.RESET);
+        }
+    }
+
 }

@@ -38,6 +38,10 @@ public class Playlists {
         return p;
     }
 
+    public Playlist getPlaylist(int playlistId) {
+        return this.playlists.get(playlistId);
+    }
+
     public static HashMap<Integer, Playlist> getAllPlaylists() {
         return DatabaseManager.getAllPlaylists();
     }
@@ -81,5 +85,13 @@ public class Playlists {
             }
         }
         DatabaseManager.printError("No se ha podido eliminar la playlist");
+    }
+
+    public void printAllPlaylists() {
+        System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + "PLAYLISTS: " + ANSI.RESET);
+        System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + String.format(" %-10s %-25s %10s ", "ID", "NOMBRE", "USER") + ANSI.RESET);
+        for(Playlist p : playlists.values()) {
+            System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + String.format(" %-10s %-25s %10s ", p.getId(), p.getName(), p.getUser()) + ANSI.RESET);
+        }
     }
 }

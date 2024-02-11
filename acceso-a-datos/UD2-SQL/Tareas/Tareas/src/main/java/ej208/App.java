@@ -76,6 +76,8 @@ public class App {
             System.out.println("4. Crear playlist");
             System.out.println("5. Añadir canción a playlist");
             System.out.println("6. Eliminar playlist");
+            System.out.println("7. Ver datos");
+            System.out.println("8. Exportar datos a XML");
             System.out.println("9. Salir");
             System.out.print("Opción: ");
             Scanner sc = new Scanner(System.in);
@@ -89,11 +91,12 @@ public class App {
                 case 4 -> createPlaylist();
                 case 5 -> addSongToPlaylist();
                 case 6 -> deletePlaylist();
+                case 7 -> printData();
+                case 8 -> exportDataToXML();
                 case 9 -> System.out.println("Saliendo...");
             }
         } while (option != 9);
     }
-
 
     // MENU OPTIONS
     private void loadData() {
@@ -187,5 +190,17 @@ public class App {
         if (c == 's' || c == 'S') {
             this.playlists.delete(playlistId, this.currentUser);
         }
+    }
+
+    private void printData() {
+        this.songs.printAllSongs();
+        System.out.println();
+        this.users.printAllUsers();
+        System.out.println();
+        this.playlists.printAllPlaylists();
+    }
+
+    private void exportDataToXML() {
+        
     }
 }
