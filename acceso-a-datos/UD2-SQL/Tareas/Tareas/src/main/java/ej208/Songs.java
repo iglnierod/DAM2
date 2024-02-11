@@ -60,6 +60,10 @@ public class Songs {
         }
     }
 
+    public Collection<Song> getSongsCollection() {
+        return this.songs.values();
+    }
+
     public static HashMap<Integer, Song> getAllSongs() {
         return DatabaseManager.getAllSongs();
     }

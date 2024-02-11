@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <canciones>
+        <cancion anio="2017" artista="Ed Sheeran" duracion="235" id="1" titulo="Shape of You"/>
+        <cancion anio="2019" artista="The Weeknd" duracion="200" id="2" titulo="Blinding Lights"/>
+        <cancion anio="2020" artista="Harry Styles" duracion="174" id="3" titulo="Watermelon Sugar"/>
+    </canciones>
+    <usuarios>
+        <usuario email="emily@example.com" id="1" nombre="Emily Johnson" nombre-de-usuario="musiclover123"/>
+        <usuario email="alex@example.com" id="2" nombre="Alex Rodriguez" nombre-de-usuario="guitarhero"/>
+        <usuario email="sophia@example.com" id="3" nombre="Sophia Kim" nombre-de-usuario="dancequeen"/>
+        <usuario email="test@example.com" id="4" nombre="Test" nombre-de-usuario="a"/>
+        <usuario email="lunna@gmail.com" id="5" nombre="lunna" nombre-de-usuario="Lunnaris10"/>
+    </usuarios>
+    <playlists>
+        <playlist canciones="[1]" id="1" nombre="YZY" usuario="4"/>
+        <playlist canciones="[]" id="2" nombre="TEMASOS" usuario="5"/>
+    </playlists>
+</root>

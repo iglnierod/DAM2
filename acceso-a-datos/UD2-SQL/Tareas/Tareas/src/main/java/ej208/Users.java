@@ -2,6 +2,7 @@ package ej208;
 
 import query.ANSI;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Users {
@@ -62,4 +63,7 @@ public class Users {
         }
     }
 
+    public Collection<User> getUsersCollection() {
+        return this.users.values();
+    }
 }

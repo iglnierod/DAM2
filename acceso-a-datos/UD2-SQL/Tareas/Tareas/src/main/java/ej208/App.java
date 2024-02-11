@@ -31,24 +31,6 @@ public class App {
         this.playlists.assignPlaylistsToUsers(this.users);
 
         login();
-
-        /* TODO: XML EXPORT */
-/*            <app>
-        <canciones>
-            <cancion id="?" titulo="" />
-        </canciones>
-
-        <usuarios>
-            <usuario id="?" nombre_usuario="" nombre="">
-                <playlists>
-                    <playlist id="?" nombre="?">
-                        <cancion id="?" titulo="" />
-                    </playlist>
-                </playlists>
-            </usuario>
-        </usuarios>
-
-    </app>*/
     }
 
     private void login() {
@@ -201,6 +183,8 @@ public class App {
     }
 
     private void exportDataToXML() {
-        
+        DatabaseManager.printInformation("Se están exportando los datos a XML...");
+        FileHandler.exportDataToXML(this.songs, this.users, this.playlists);
+        DatabaseManager.printInformation("Se han exportado los datos al archivo: " + new File(DIR_SQL, "data.xml").getAbsolutePath());
     }
 }

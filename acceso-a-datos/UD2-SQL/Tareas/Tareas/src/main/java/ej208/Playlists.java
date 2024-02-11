@@ -3,6 +3,7 @@ package ej208;
 import query.ANSI;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Playlists {
@@ -93,5 +94,9 @@ public class Playlists {
         for(Playlist p : playlists.values()) {
             System.out.println(ANSI.WHITE_BACKGROUND + ANSI.BLACK + String.format(" %-10s %-25s %10s ", p.getId(), p.getName(), p.getUser()) + ANSI.RESET);
         }
+    }
+
+    public Collection<Playlist> getPlaylistsCollection() {
+        return this.playlists.values();
     }
 }

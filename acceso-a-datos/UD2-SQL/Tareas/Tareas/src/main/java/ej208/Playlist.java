@@ -65,6 +65,10 @@ public class Playlist {
         this.songs = songs;
     }
 
+    public ArrayList<Integer> getSongs() {
+        return songs;
+    }
+
     @Override
     public String toString() {
         return "Playlist{" +
