@@ -10,10 +10,8 @@
         <usuario email="alex@example.com" id="2" nombre="Alex Rodriguez" nombre-de-usuario="guitarhero"/>
         <usuario email="sophia@example.com" id="3" nombre="Sophia Kim" nombre-de-usuario="dancequeen"/>
         <usuario email="test@example.com" id="4" nombre="Test" nombre-de-usuario="a"/>
-        <usuario email="lunna@gmail.com" id="5" nombre="lunna" nombre-de-usuario="Lunnaris10"/>
     </usuarios>
     <playlists>
-        <playlist canciones="[1]" id="1" nombre="YZY" usuario="4"/>
-        <playlist canciones="[]" id="2" nombre="TEMASOS" usuario="5"/>
+        <playlist canciones="[1, 2]" id="1" nombre="TEMASOS" usuario="2"/>
     </playlists>
 </root>

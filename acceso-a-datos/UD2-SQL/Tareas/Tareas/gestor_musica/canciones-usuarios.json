@@ -1,22 +1,124 @@
 {
   "canciones": [
     {
-      "titulo": "Shape of You",
-      "artista": "Ed Sheeran",
-      "duracion": 235,
-      "anio": 2017
-    },
-    {
-      "titulo": "Blinding Lights",
-      "artista": "The Weeknd",
-      "duracion": 200,
-      "anio": 2019
-    },
-    {
-      "titulo": "Watermelon Sugar",
-      "artista": "Harry Styles",
-      "duracion": 174,
+      "titulo": "Bala Perdida",
+      "artista": "C. Tangana",
+      "duracion": 215,
       "anio": 2020
+    },
+    {
+      "titulo": "Millones",
+      "artista": "C. Tangana, Alizzz",
+      "duracion": 225,
+      "anio": 2020
+    },
+    {
+      "titulo": "Tú Me Dejaste De Querer",
+      "artista": "C. Tangana, Niño de Elche, La Hungara",
+      "duracion": 295,
+      "anio": 2020
+    },
+    {
+      "titulo": "Demasiadas Mujeres",
+      "artista": "C. Tangana",
+      "duracion": 234,
+      "anio": 2021
+    },
+    {
+      "titulo": "Bien Duro",
+      "artista": "C. Tangana, Gipsy Kings",
+      "duracion": 210,
+      "anio": 2021
+    },
+    {
+      "titulo": "KUN AGÜERO",
+      "artista": "C. Tangana, Kiko Veneno",
+      "duracion": 226,
+      "anio": 2021
+    },
+    {
+      "titulo": "Tokio",
+      "artista": "C. Tangana",
+      "duracion": 210,
+      "anio": 2021
+    },
+    {
+      "titulo": "Hong Kong",
+      "artista": "C. Tangana, Andrés Calamaro",
+      "duracion": 259,
+      "anio": 2021
+    },
+    {
+      "titulo": "Cambia!",
+      "artista": "Kase.O",
+      "duracion": 282,
+      "anio": 2020
+    },
+    {
+      "titulo": "Amaral",
+      "artista": "Kase.O, Parafrikano",
+      "duracion": 284,
+      "anio": 2020
+    },
+    {
+      "titulo": "Mitad y Mitad",
+      "artista": "Kase.O",
+      "duracion": 225,
+      "anio": 2021
+    },
+    {
+      "titulo": "Preocupado",
+      "artista": "Kase.O, Zetazen",
+      "duracion": 260,
+      "anio": 2021
+    },
+    {
+      "titulo": "Sé Bien",
+      "artista": "Kase.O",
+      "duracion": 234,
+      "anio": 2021
+    },
+    {
+      "titulo": "Dr. Lecter",
+      "artista": "Natos y Waor",
+      "duracion": 210,
+      "anio": 2020
+    },
+    {
+      "titulo": "Hijos de la Ruina",
+      "artista": "Natos y Waor",
+      "duracion": 234,
+      "anio": 2020
+    },
+    {
+      "titulo": "Sálvame",
+      "artista": "Natos y Waor",
+      "duracion": 204,
+      "anio": 2021
+    },
+    {
+      "titulo": "Lowriders",
+      "artista": "Easy-S, Foyone, Chuty",
+      "duracion": 242,
+      "anio": 2021
+    },
+    {
+      "titulo": "El Manco Y Su Cuadrilla",
+      "artista": "Foyone",
+      "duracion": 270,
+      "anio": 2020
+    },
+    {
+      "titulo": "Sigo En Pie",
+      "artista": "Foyone",
+      "duracion": 220,
+      "anio": 2021
+    },
+    {
+      "titulo": "Amos Del Universo",
+      "artista": "Foyone",
+      "duracion": 256,
+      "anio": 2021
     }
   ],
   "usuarios": [
