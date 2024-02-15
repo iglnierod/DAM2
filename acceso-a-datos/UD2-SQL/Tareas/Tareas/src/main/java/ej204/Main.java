@@ -104,10 +104,10 @@ public class Main {
         // 32. Los empleados que trabajen en SANTIAGO o VILAGARCIA.
         consulta("""
                     SELECT *
-                    FROM empleados.emp e\s
+                    FROM empleados.emp e
                     WHERE e.numdep IN (
-                    	SELECT  numdep\s
-                    	FROM empleados.depto\s
+                    	SELECT  numdep
+                    	FROM empleados.depto
                     	WHERE localidad IN ('SANTIAGO','VILAGARCIA')
                     );
                 """);
@@ -138,7 +138,7 @@ public class Main {
             modificacion("DELETE FROM empleados.emp WHERE emp.nomemp like 'FORD';");
 
             // 5. Borra los datos del empleado 7934.
-            // modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
+            modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
 
             //??? 6. Borra los datos del departamento número 3.
             /*setForeignKeyChecks(false);
@@ -149,13 +149,12 @@ public class Main {
             System.out.println("Se han realizado todas las modificaciones exitosamente.");
         } catch (SQLException e) {
             try {
-                if (con != null) {
-                    con.rollback();
-                }
+                con.rollback();
+                System.out.println("rollback");
             } catch (SQLException ex) {
                 System.out.println("Error al hacer rollback: " + ex.getMessage());
             }
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
