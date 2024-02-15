@@ -34,7 +34,7 @@ class LoginViewModel : ViewModel() {
     }
 
     fun enableLogin(email: String, password: String) =
-        Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 6
+        Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 0
 
     fun onLoginSelected() {
 

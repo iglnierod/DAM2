@@ -186,7 +186,7 @@ fun LoginDivider() {
 fun LoginButton(loginEnable: Boolean, loginViewModel: LoginViewModel) {
     Button(
         onClick = { loginViewModel.onLoginSelected() } /*Le pasamos la llamada a la rutina*/,
-        enabled = loginEnable,
+        enabled = true,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFF4EA8E9),
