@@ -1,18 +1,12 @@
 package ej204;
 
+import query.Query;
+
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-//        Departamento dep = new Departamento();
-//        dep.getAll();
-//        dep.insert(1,"Conabili",);
-//        dep.getById(1);
-//        dep.getNameById();
-//        dep.getNumDepById();
-
-
-
         // 1. Los datos completos de los empleados.
         consulta("SELECT * FROM empleados.emp;");
 
@@ -96,8 +90,7 @@ public class Main {
         consulta("SELECT * FROM empleados.emp WHERE sal >= (SELECT AVG(sal) FROM empleados.emp);");
 
         // 28. Los empleados cuyo salario supera al de sus compañeros de departamento.
-        // TODO
-        /*SELECT * FROM empleados.emp e GROUP BY numdep HAVING MAX(sal);*/
+        consulta("SELECT numdep, MAX(sal) AS salario_maximo FROM empleados.emp GROUP BY numdep;");
 
         // 29. Los departamentos que no tienen empleados.
         consulta("SELECT * FROM empleados.depto d WHERE numdep NOT IN (SELECT numdep FROM empleados.emp e GROUP BY numdep) GROUP BY numdep;");
@@ -123,25 +116,47 @@ public class Main {
         consulta("SELECT  numdep, max(sal) AS maximo_salario FROM empleados.emp e GROUP BY numdep;");
 
         /* ==== MODIFICACIONES ====*/
-        // 1. Cambia el nombre del empleado con número de empleado 7499 a JORGE.
-        modificacion("UPDATE empleados.emp SET nomemp = 'JORGE' WHERE numemp = 7499;");
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            final String URL = "jdbc:mysql://127.0.0.1:3306/";
+            final String USER = "root";
+            final String PASS = "abc123.";
+            con = DriverManager.getConnection(URL, USER, PASS);
+            con.setAutoCommit(false); // Iniciamos la transacción
+            stmt = con.createStatement();
+            // 1. Cambia el nombre del empleado con número de empleado 7499 a JORGE.
+            modificacion("UPDATE empleados.emp SET nomemp = 'JORGE' WHERE numemp = 7499;");
 
-        // 2. Cambia la localidad del departamento OPERACIONES a MADRID.
-        modificacion("UPDATE empleados.depto SET localidad = 'MADRID' WHERE nomdep LIKE 'OPERACIONES';");
+            // 2. Cambia la localidad del departamento OPERACIONES a MADRID.
+            modificacion("UPDATE empleados.depto SET localidad = 'MADRID' WHERE nomdep LIKE 'OPERACIONES';");
 
-        // 3. Ponle un salario de 3000 euros a todos los empleados con código superior a 7800.
-        modificacion("UPDATE empleados.emp SET sal = 3000 WHERE numemp > 7800;");
+            // 3. Ponle un salario de 3000 euros a todos los empleados con código superior a 7800.
+            modificacion("UPDATE empleados.emp SET sal = 3000 WHERE numemp > 7800;");
 
-        // 4. Borra los datos del empleado FORD.
-        modificacion("DELETE FROM empleados.emp WHERE emp.nomemp like 'FORD';");
+            // 4. Borra los datos del empleado FORD.
+            modificacion("DELETE FROM empleados.emp WHERE emp.nomemp like 'FORD';");
 
-        // 5. Borra los datos del empleado 7934.
-        // modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
+            // 5. Borra los datos del empleado 7934.
+            // modificacion("DELETE FROM empleados.emp WHERE numemp = 7934;");
 
-        //??? 6. Borra los datos del departamento número 3.
-        setForeignKeyChecks(false);
-        modificacion("DELETE FROM empleados.depto WHERE numdep = 3;");
-        setForeignKeyChecks(true);
+            //??? 6. Borra los datos del departamento número 3.
+            /*setForeignKeyChecks(false);
+            modificacion("DELETE FROM empleados.depto WHERE numdep = 3;");
+            setForeignKeyChecks(true);
+*/
+            con.commit(); // Confirmamos la transacción
+            System.out.println("Se han realizado todas las modificaciones exitosamente.");
+        } catch (SQLException e) {
+            try {
+                if (con != null) {
+                    con.rollback();
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al hacer rollback: " + ex.getMessage());
+            }
+            throw new RuntimeException(e);
+        }
     }
 
     public static void consulta(String sql) {
@@ -149,29 +164,19 @@ public class Main {
         final String USER = "root";
         final String PASS = "abc123.";
         try (Connection con = DriverManager.getConnection(URL, USER, PASS); Statement stmt = con.createStatement()) {
-            ResultSet resultSet = stmt.executeQuery(sql);
-            System.out.printf("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ %20s ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n", sql);
-            printResultSet(resultSet);
-            for (int i = 0; i < 75; i++) {
-                System.out.print("- ");
-            }
-            System.out.println("\n");
+            Query.query(con, sql);
+//            ResultSet resultSet = stmt.executeQuery(sql);
+//            System.out.printf("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ %20s ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\n", sql);
+//            printResultSet(resultSet);
+//            for (int i = 0; i < 75; i++) {
+//                System.out.print("- ");
+//            }
+//            System.out.println("\n");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void modificacion(String sql) {
-        final String URL = "jdbc:mysql://127.0.0.1:3306/";
-        final String USER = "root";
-        final String PASS = "abc123.";
-        try (Connection con = DriverManager.getConnection(URL, USER, PASS); Statement stmt = con.createStatement()) {
-            stmt.executeUpdate(sql);
-            System.out.println("SE HA REALIZADO LA MODIFICACION: " + sql);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static void printResultSet(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
@@ -198,6 +203,16 @@ public class Main {
                 System.out.printf("%-20s", resultSet.getString(i));
             }
             System.out.println();
+        }
+    }
+
+    public static void modificacion(String sql) throws SQLException {
+        final String URL = "jdbc:mysql://127.0.0.1:3306/";
+        final String USER = "root";
+        final String PASS = "abc123.";
+        try (Connection con = DriverManager.getConnection(URL, USER, PASS); Statement stmt = con.createStatement()) {
+            stmt.executeUpdate(sql);
+            System.out.println("SE HA REALIZADO LA MODIFICACION: " + sql);
         }
     }
 
