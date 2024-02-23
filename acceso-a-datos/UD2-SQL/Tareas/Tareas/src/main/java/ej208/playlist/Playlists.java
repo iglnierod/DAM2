@@ -1,5 +1,8 @@
-package ej208;
+package ej208.playlist;
 
+import ej208.DatabaseManager;
+import ej208.user.User;
+import ej208.user.Users;
 import query.ANSI;
 
 import java.util.ArrayList;

@@ -3,6 +3,12 @@ package ej208;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import ej208.playlist.Playlist;
+import ej208.playlist.Playlists;
+import ej208.song.Song;
+import ej208.song.Songs;
+import ej208.user.User;
+import ej208.user.Users;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;

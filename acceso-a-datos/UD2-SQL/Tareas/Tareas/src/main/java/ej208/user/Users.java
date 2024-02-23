@@ -1,5 +1,6 @@
-package ej208;
+package ej208.user;
 
+import ej208.DatabaseManager;
 import query.ANSI;
 
 import java.util.Collection;

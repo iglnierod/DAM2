@@ -1,4 +1,4 @@
-package ej208;
+package ej208.user;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,12 @@
 package ej208;
 
+import ej208.playlist.Playlist;
+import ej208.playlist.Playlists;
+import ej208.song.Song;
+import ej208.song.Songs;
+import ej208.user.User;
+import ej208.user.Users;
+
 import java.io.File;
 import java.util.Scanner;
 

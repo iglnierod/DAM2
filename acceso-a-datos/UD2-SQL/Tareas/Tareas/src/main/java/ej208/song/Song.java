@@ -1,4 +1,4 @@
-package ej208;
+package ej208.song;
 
 public class Song {
     private int id;

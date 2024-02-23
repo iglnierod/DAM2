@@ -1,5 +1,8 @@
 package ej208;
 
+import ej208.playlist.Playlist;
+import ej208.song.Song;
+import ej208.user.User;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.support.EncodedResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;

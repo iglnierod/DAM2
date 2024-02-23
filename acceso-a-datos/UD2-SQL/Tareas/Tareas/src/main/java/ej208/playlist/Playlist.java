@@ -1,4 +1,6 @@
-package ej208;
+package ej208.playlist;
+
+import ej208.DatabaseManager;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
