@@ -38,6 +38,7 @@ public class Client implements Runnable {
                 socket.close();
             } catch (IOException e) {
                 Contador.connectionFailed = true;
+                Contador.lastClientConnected = this.name;
             }
         }
     }
@@ -53,6 +54,7 @@ public class Client implements Runnable {
         System.out.println("Lista de clientes conectados:");
         System.out.println(c.getClientsConnected());
         System.out.println();
+        System.out.println("Primer cliente que falla: " + c.getLastClientConnected());
         System.out.println("Primer cliente conectado: " + c.getFirstConnected());
         System.out.println("Ultimo cliente conectado: "+ c.getLastConnected());
         System.out.println("Total clientes conectados: " + c.getTotalConnections());
