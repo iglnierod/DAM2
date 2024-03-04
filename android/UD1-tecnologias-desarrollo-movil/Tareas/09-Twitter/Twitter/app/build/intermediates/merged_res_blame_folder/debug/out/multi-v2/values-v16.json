@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.iglnierod.twitter.app-mergeDebugResources-42:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\dam2_alu08\\.gradle\\caches\\transforms-3\\2c74e488771f406edda631d4c804c103\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

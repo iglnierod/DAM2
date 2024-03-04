@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-mdpi_cat.png.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-mdpi/cat.png"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-mdpi_cat1.jpg.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-mdpi/cat1.jpg"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-mdpi_cat3.jpg.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-mdpi/cat3.jpg"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable_more_horiz_white_24dp.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable/more_horiz_white_24dp.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-mdpi_twitter_verified_badge.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-mdpi/twitter_verified_badge.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable_cat4.jpg.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable/cat4.jpg"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/xml_backup_rules.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-500x500_user_image.jpg.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-500x500/user_image.jpg"
+    },
+    {
+        "merged": "com.iglnierod.twitter.app-merged_res-44:/drawable-mdpi_cat2.jpg.flat",
+        "source": "com.iglnierod.twitter.app-main-46:/drawable-mdpi/cat2.jpg"
+    }
+]
