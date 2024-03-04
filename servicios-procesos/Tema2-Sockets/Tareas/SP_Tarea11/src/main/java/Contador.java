@@ -4,6 +4,7 @@ public class Contador {
     private int n;
     private ArrayList<String> clientsConnected;
     public static boolean connectionFailed = false;
+    public static String lastClientConnected;
 
     public Contador() {
         this.n = 0;
@@ -33,5 +34,13 @@ public class Contador {
 
     public int getN() {
         return n;
+    }
+
+    public String getLastClientConnected() {
+        return lastClientConnected;
+    }
+
+    public void setLastClientConnected(String lastClientConnected) {
+        this.lastClientConnected = lastClientConnected;
     }
 }

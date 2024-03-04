@@ -41,7 +41,7 @@ public class Server {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null)
-                sb.append(line);
+                sb.append(line).append("\n");
             return sb.toString();
         } catch (IOException e) {
             e.printStackTrace();
