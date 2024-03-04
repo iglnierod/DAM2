@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -94,19 +95,7 @@ fun MainContent(foodViewModel: FoodViewModel) {
         }
     }
 
-    val foods: List<FoodModel> =
-        when (uiState) {
-
-            //ERROR
-            is FoodUiState.Error -> emptyList()
-
-            //LOADING
-            FoodUiState.Loading -> emptyList()
-
-            is FoodUiState.Success -> {
-                (uiState as FoodUiState.Success).foods
-            }
-        }
+    val foods: List<FoodModel> = foodViewModel.getFoods(uiState)
 
     Log.i("FoodsList", foods.toString())
 
@@ -115,6 +104,9 @@ fun MainContent(foodViewModel: FoodViewModel) {
             .fillMaxSize()
             .padding(10.dp)
     ) {
+        //FoodList(foodViewModel = foodViewModel)
+        FoodList(foods = foods, foodViewModel = foodViewModel)
+        FabDialog(Modifier.align(Alignment.BottomEnd), foodViewModel)
         AddFoodsDialog(
             showDialog,
             onDismiss = { foodViewModel.onDialogClose() },
@@ -126,9 +118,6 @@ fun MainContent(foodViewModel: FoodViewModel) {
                 )
             }
         )
-        //FoodList(foodViewModel = foodViewModel)
-        FoodList(foods = foods, foodViewModel = foodViewModel)
-        FabDialog(Modifier.align(Alignment.BottomEnd), foodViewModel)
     }
 }
 
@@ -221,43 +210,21 @@ fun FabDialog(modifier: Modifier, foodViewModel: FoodViewModel) {
 
 @Composable
 fun FoodList(foods: List<FoodModel>, foodViewModel: FoodViewModel) {
-
-    /*val foods: List<FoodModel> = foodViewModel.foods
-    
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(all = 8.dp)
     ) {
-        for (food in foods) {
-            Log.i("FoodModel",food.toString())
-            FoodItem(
-                foodName = food.name,
-                foodDescription = food.description,
-                foodPrice = food.price.toString()
-            )
+        MenuBusqueda()
+        LazyColumn {
+            itemsIndexed(foods) { _, food ->
+                FoodItem(
+                    foodName = food.name,
+                    foodDescription = food.description,
+                    foodPrice = food.price.toString()
+                )
+            }
         }
-    }*/
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(all = 8.dp)
-    ) {
-        for (food in foods) {
-            FoodItem(
-                foodName = food.name,
-                foodDescription = food.description,
-                foodPrice = food.price.toString()
-            )
-        }
-        /*items(foods, key = { it.id }) { food ->
-            Log.i("Food", food.toString())
-            FoodItem(
-                foodName = food.name,
-                foodDescription = food.description,
-                foodPrice = food.price.toString()
-            )
-        }*/
     }
 }
 
