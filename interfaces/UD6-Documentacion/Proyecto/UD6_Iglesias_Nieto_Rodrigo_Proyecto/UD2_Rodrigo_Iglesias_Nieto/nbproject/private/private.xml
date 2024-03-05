@@ -6,13 +6,14 @@
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/AldComputerService.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/controller/manageAldData/computers/ManageAldComputersController.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/controller/manageAldData/services/ManageAldComputerServicesController.java</file>
+            <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/view/aldComputerService/ManageAldDataDialog.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/view/MainJFrame.java</file>
-            <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/repairs/Service.java</file>
+            <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/service/ServiceType.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/IAldComputerService.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/controller/FrontControllerJFrame.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/computers/Computer.java</file>
-            <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/repairs/ServiceType.java</file>
             <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/view/aldComputerService/ManageAldComputersDialog.java</file>
+            <file>file:/X:/repos/DAM2/interfaces/UD6-Documentacion/Proyecto/UD6_Iglesias_Nieto_Rodrigo_Proyecto/UD2_Rodrigo_Iglesias_Nieto/src/model/aldComputerService/service/Service.java</file>
         </group>
     </open-files>
 </project-private>

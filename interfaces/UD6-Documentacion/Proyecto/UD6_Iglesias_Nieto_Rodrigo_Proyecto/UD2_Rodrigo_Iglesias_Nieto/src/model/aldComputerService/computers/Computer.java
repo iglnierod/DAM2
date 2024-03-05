@@ -6,7 +6,7 @@ package model.aldComputerService.computers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import model.aldComputerService.repairs.Service;
+import model.aldComputerService.service.Service;
 
 /**
  *
@@ -18,14 +18,14 @@ public abstract class Computer {
     private String brand;
     private String model;
     private ComputerType computerType;
-    private ArrayList<Service> services;
+    //private ArrayList<Service> services;
 
     public Computer(String serialNumber, String brand, String model, ComputerType computerType) {
         this.serialNumber = serialNumber;
         this.brand = brand;
         this.model = model;
         this.computerType = computerType;
-        services = new ArrayList<>();
+        //services = new ArrayList<>();
     }
 
     public String getSerialNumber() {
@@ -60,7 +60,7 @@ public abstract class Computer {
         this.computerType = computerType;
     }
 
-    public ArrayList<Service> getServices() {
+    /*public ArrayList<Service> getServices() {
         return services;
     }
 
@@ -78,7 +78,7 @@ public abstract class Computer {
 
     public void getService(int index) {
         this.services.get(index);
-    }
+    }*/
 
     public static HashMap<String, Computer> addDefaults() {
 

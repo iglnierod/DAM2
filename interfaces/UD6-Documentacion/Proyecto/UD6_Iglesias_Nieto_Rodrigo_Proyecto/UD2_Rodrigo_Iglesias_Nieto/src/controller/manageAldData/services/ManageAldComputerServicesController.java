@@ -15,12 +15,12 @@ import view.aldComputerService.ManageAldComputersDialog;
 public class ManageAldComputerServicesController {
     private final ManageAldComputersDialog view;
     private final AldComputerService model;
-    private final String computerSerialNumber;
+    private final Computer computer;
 
-    public ManageAldComputerServicesController(ManageAldComputersDialog view, AldComputerService model, String computerSerialNumber) {
+    public ManageAldComputerServicesController(ManageAldComputersDialog view, AldComputerService model, Computer computer) {
         this.view = view;
         this.model = model;
-        this.computerSerialNumber = computerSerialNumber;
+        this.computer = computer;
     }
 
     public void addListeners(){}

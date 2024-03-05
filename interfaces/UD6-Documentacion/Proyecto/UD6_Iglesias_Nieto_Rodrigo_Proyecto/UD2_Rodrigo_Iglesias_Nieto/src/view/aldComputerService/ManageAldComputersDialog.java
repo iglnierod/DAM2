@@ -38,7 +38,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        manageComputersTabbedPane = new javax.swing.JTabbedPane();
+        servicesTabbedPane = new javax.swing.JTabbedPane();
         computersPanel = new javax.swing.JPanel();
         tableScrollPane = new javax.swing.JScrollPane();
         computersTable = new javax.swing.JTable();
@@ -56,7 +56,15 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         computerTypeComboBox = new javax.swing.JComboBox<>();
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
-        servicesTabbedPane = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        deleteButton1 = new javax.swing.JButton();
+        editButton1 = new javax.swing.JButton();
+        addButton1 = new javax.swing.JButton();
+        addButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -215,18 +223,104 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
         computersPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addButton, editButton});
 
-        manageComputersTabbedPane.addTab("Computers", computersPanel);
-        manageComputersTabbedPane.addTab("Services", servicesTabbedPane);
+        servicesTabbedPane.addTab("Computers", computersPanel);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Services for ");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Contact:");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Type", "Register Date", "Service Date", "Repaired", "price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        deleteButton1.setBackground(new java.awt.Color(204, 0, 0));
+        deleteButton1.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton1.setText("Delete");
+
+        editButton1.setText("Edit");
+
+        addButton1.setText("Add");
+
+        addButton2.setText("View");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(deleteButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addButton2))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(171, 171, 171)
+                            .addComponent(jLabel3))))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addButton1)
+                    .addComponent(editButton1)
+                    .addComponent(deleteButton1)
+                    .addComponent(addButton2))
+                .addContainerGap(213, Short.MAX_VALUE))
+        );
+
+        servicesTabbedPane.addTab("Services", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(manageComputersTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(servicesTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(manageComputersTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+            .addComponent(servicesTabbedPane)
         );
 
         pack();
@@ -380,6 +474,8 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton addButton1;
+    private javax.swing.JButton addButton2;
     private javax.swing.JLabel brandLabel;
     private javax.swing.JTextField brandTextField;
     private javax.swing.JButton cancelButton;
@@ -389,8 +485,14 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     private javax.swing.JPanel computersPanel;
     private javax.swing.JTable computersTable;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JButton deleteButton1;
     private javax.swing.JButton editButton;
-    private javax.swing.JTabbedPane manageComputersTabbedPane;
+    private javax.swing.JButton editButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel modelLabel;
     private javax.swing.JTextField modelTextField;
     private javax.swing.JButton saveButton;

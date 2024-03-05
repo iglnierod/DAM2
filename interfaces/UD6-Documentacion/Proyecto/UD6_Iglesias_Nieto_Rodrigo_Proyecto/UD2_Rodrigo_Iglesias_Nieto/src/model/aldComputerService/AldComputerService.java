@@ -4,8 +4,10 @@
  */
 package model.aldComputerService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import model.aldComputerService.computers.Computer;
+import model.aldComputerService.service.Service;
 
 /**
  *
@@ -18,6 +20,7 @@ public class AldComputerService implements IAldComputerService {
     private String telephoneNumber;
     private int numberOfEmployees;
     private HashMap<String, Computer> computers = new HashMap<>();
+    private HashMap<Service, Computer> services = new HashMap<>();
 
     public AldComputerService() {
         this.name = "";
@@ -104,6 +107,12 @@ public class AldComputerService implements IAldComputerService {
                 + "Address: " + address + "\n"
                 + "Telephone Number: " + telephoneNumber + "\n"
                 + "Number of Employees: " + numberOfEmployees;
+    }
+
+    // SERVICES
+    @Override
+    public ArrayList<Service> getServices(Computer computer) {
+        return null;
     }
 
 }

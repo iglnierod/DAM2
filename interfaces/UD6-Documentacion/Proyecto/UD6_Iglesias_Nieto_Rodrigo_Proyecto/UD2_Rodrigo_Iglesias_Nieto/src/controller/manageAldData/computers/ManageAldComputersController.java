@@ -4,6 +4,7 @@
  */
 package controller.manageAldData.computers;
 
+import controller.manageAldData.services.ManageAldComputerServicesController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -210,7 +211,13 @@ public class ManageAldComputersController {
         ListSelectionListener listener = new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                
+                ArrayList<String> row = view.getComputersTableSelectedRow();
+                if (row == null) {
+                    return;
+                }
+                Computer computer = model.getComputer(row.get(0));
+                ManageAldComputerServicesController madsc = new ManageAldComputerServicesController(view, model, computer);
+                view.setEnabledServiceTabbedPane(true);
             }
         };
         return listener;
