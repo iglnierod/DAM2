@@ -1,58 +1,61 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
 public class Server {
-    public static void main(String[] args) {
-        try {
-            ServerSocket serverSocket = new ServerSocket(8080);
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(12345);
+        System.out.println("Server conectado, esperando clientes...");
 
-            while (true) {
+        while (true) {
+            Socket clientSocket = serverSocket.accept();
+            System.out.println("Cliente conectado: " + clientSocket.getInetAddress().getHostName());
 
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Nuevo cliente conectado");
-
-                Thread clientThread = new Thread(new ClientHandler(clientSocket));
-                clientThread.start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            Thread t = new Thread(new ClientHandler(clientSocket));
+            t.start();
         }
     }
+}
 
-    private static class ClientHandler implements Runnable {
-        private final Socket clientSocket;
+class ClientHandler implements Runnable {
+    private Socket clientSocket;
 
-        public ClientHandler(Socket clientSocket) {
-            this.clientSocket = clientSocket;
-        }
+    public ClientHandler(Socket socket) {
+        this.clientSocket = socket;
+    }
 
-        @Override
-        public void run() {
-            try {
-                //Server code...
-                InputStream inputStream = clientSocket.getInputStream();
-                OutputStream outputStream = clientSocket.getOutputStream();
+    @Override
+    public void run() {
+        try {
+            DataInputStream dataInput = new DataInputStream(clientSocket.getInputStream());
+            DataOutputStream dataOutput = new DataOutputStream(clientSocket.getOutputStream());
+
+            String fileName = dataInput.readUTF();
+            System.out.println("Recibida petición de archivo: " + fileName);
+
+            File file = new File(fileName);
+            if (file.exists() && !file.isDirectory()) {
+                dataOutput.writeUTF("EXISTS");
+
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+                DataOutputStream outFile = new DataOutputStream(clientSocket.getOutputStream());
 
                 byte[] buffer = new byte[1024];
-                int bytesRead = inputStream.read(buffer);
-
-                if (bytesRead > 0) {
-                    String message = new String(buffer, 0, bytesRead);
-                    System.out.println("Mensaje recibido del cliente: " + message);
-
-                    String confirmationMessage = "Mensaje recibido. Vuelva pronto";
-                    outputStream.write(confirmationMessage.getBytes());
+                int bytesRead;
+                while ((bytesRead = bufferedInputStream.read(buffer)) != -1) {
+                    outFile.write(buffer, 0, bytesRead);
                 }
 
-                inputStream.close();
-                outputStream.close();
-                clientSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                bufferedInputStream.close();
+                outFile.close();
+                System.out.println("Archivo enviado: " + fileName);
+            } else {
+                dataOutput.writeUTF("NOT_EXISTS");
+                System.out.println("Archivo no encontrado: " + fileName);
             }
+
+            clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
