@@ -1,27 +1,22 @@
 package com.example.recuperacion.ui
 
-import android.annotation.SuppressLint
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.lifecycle.Lifecycle
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.viewModelScope
 import com.example.recuperacion.domain.AddFoodUseCase
 import com.example.recuperacion.domain.GetFoodUseCase
-import com.example.recuperacion.ui.model.FoodModel
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 import com.example.recuperacion.ui.FoodUiState.Success
+import com.example.recuperacion.ui.model.FoodModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
 class FoodViewModel @Inject constructor(
@@ -37,7 +32,7 @@ class FoodViewModel @Inject constructor(
     private val _showDialog = MutableLiveData<Boolean>()
     val showDialog: LiveData<Boolean> = _showDialog
 
-    private val _foods = mutableListOf<FoodModel>()
+    private val _foods = mutableStateListOf<FoodModel>()
     val foods: List<FoodModel> = _foods
 
     fun getFoods(foodUiState: FoodUiState): List<FoodModel> {
@@ -47,6 +42,8 @@ class FoodViewModel @Inject constructor(
             is Success -> {
                 foodUiState.foods
             }
+
+            //else -> {}
         }
     }
 
