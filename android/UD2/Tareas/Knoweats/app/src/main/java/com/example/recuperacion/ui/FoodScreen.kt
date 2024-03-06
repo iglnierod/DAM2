@@ -59,23 +59,6 @@ import com.example.recuperacion.Food
 /**************************************************************************************************/
 /***************************************** PRINCIPAL **********************************************/
 /**************************************************************************************************/
-/*@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun MainContent(foods: List<Food>) {
-    Scaffold(
-        topBar = { MyTopAppBar() },
-        floatingActionButton = { MyFloatingActionButton() }
-    ) { contentPadding ->
-        // Screen content
-        Column(
-            modifier = Modifier
-                .padding(contentPadding)
-                .background(Color.Black)
-        ) {
-            FoodList(foods = foods)
-        }
-    }
-}*/
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("ProduceStateDoesNotAssignValue")
