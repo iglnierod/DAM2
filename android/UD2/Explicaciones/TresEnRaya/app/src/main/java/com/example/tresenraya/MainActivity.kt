@@ -14,15 +14,6 @@ import com.example.tresenraya.ui.theme.TresEnRayaTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 
-// Listado de partidas
-    // board : List<String> = 9 posiciones
-    // gameId:String
-        //Player1
-            //playerId
-            //playerType
-        //Player2
-        //PlayerTurn
-
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 

@@ -11,7 +11,7 @@ import javax.inject.Inject
 class FirebaseService @Inject constructor(private val reference: DatabaseReference){
 
     companion object {
-        private const val PATH = "games"
+        const val PATH = "games"
     }
 
     fun createGame(gameData: GameData): String {
