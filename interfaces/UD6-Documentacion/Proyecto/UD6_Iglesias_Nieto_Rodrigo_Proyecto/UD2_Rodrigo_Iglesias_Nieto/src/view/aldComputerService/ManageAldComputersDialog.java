@@ -26,7 +26,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
      */
     public ManageAldComputersDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();        
+        initComponents();
     }
 
     /**
@@ -57,14 +57,14 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        serviceForLabel = new javax.swing.JLabel();
+        contactLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        deleteButton1 = new javax.swing.JButton();
-        editButton1 = new javax.swing.JButton();
-        addButton1 = new javax.swing.JButton();
-        addButton2 = new javax.swing.JButton();
+        servicesTable = new javax.swing.JTable();
+        DeleteServiceButton = new javax.swing.JButton();
+        editServiceButton = new javax.swing.JButton();
+        addServiceButton = new javax.swing.JButton();
+        viewServiceButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -225,13 +225,13 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
         servicesTabbedPane.addTab("Computers", computersPanel);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Services for ");
+        serviceForLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        serviceForLabel.setText("Services for ");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Contact:");
+        contactLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        contactLabel.setText("Contact:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        servicesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -254,20 +254,20 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        servicesTable.setColumnSelectionAllowed(true);
+        servicesTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(servicesTable);
+        servicesTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        deleteButton1.setBackground(new java.awt.Color(204, 0, 0));
-        deleteButton1.setForeground(new java.awt.Color(255, 255, 255));
-        deleteButton1.setText("Delete");
+        DeleteServiceButton.setBackground(new java.awt.Color(204, 0, 0));
+        DeleteServiceButton.setForeground(new java.awt.Color(255, 255, 255));
+        DeleteServiceButton.setText("Delete");
 
-        editButton1.setText("Edit");
+        editServiceButton.setText("Edit");
 
-        addButton1.setText("Add");
+        addServiceButton.setText("Add");
 
-        addButton2.setText("View");
+        viewServiceButton.setText("View");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -277,19 +277,19 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(deleteButton1)
+                        .addComponent(DeleteServiceButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(editButton1)
+                        .addComponent(editServiceButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addButton1)
+                        .addComponent(addServiceButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addButton2))
+                        .addComponent(viewServiceButton))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
+                            .addComponent(serviceForLabel)
                             .addGap(171, 171, 171)
-                            .addComponent(jLabel3))))
+                            .addComponent(contactLabel))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -297,16 +297,16 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(serviceForLabel)
+                    .addComponent(contactLabel))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addButton1)
-                    .addComponent(editButton1)
-                    .addComponent(deleteButton1)
-                    .addComponent(addButton2))
+                    .addComponent(addServiceButton)
+                    .addComponent(editServiceButton)
+                    .addComponent(DeleteServiceButton)
+                    .addComponent(viewServiceButton))
                 .addContainerGap(213, Short.MAX_VALUE))
         );
 
@@ -453,29 +453,53 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         System.out.println(this.computerTypeComboBox.getSelectedItem().toString());
         return this.computerTypeComboBox.getSelectedItem().toString();
     }
-    
+
     public void setComputerTypeComboBoxSelected(int index) {
         this.computerTypeComboBox.setSelectedIndex(index);
     }
 
-    
     // EVITAR ERROR AL EDITAR EL SERIAL NUMBER
     public void enableSerialNumberTextField(boolean enabled) {
         this.serialNumberTextField.setEnabled(enabled);
     }
-    
+
     public void setEnabledServiceTabbedPane(boolean enable) {
         this.servicesTabbedPane.setEnabled(enable);
     }
-    
+
     public void setComputersTableListSelectionListener(ListSelectionListener listener) {
         this.computersTable.getSelectionModel().addListSelectionListener(listener);
     }
+
+    // ========== SERVICES TAB ==========
+    public void setServiceForLabelText(String serialNumber) {
+        this.serviceForLabel.setText("Service for " + serialNumber);
+    }
+
+    public void setContactText(String contact) {
+        this.contactLabel.setText("Contact: " + contact);
+    }
+
+    public void setDeleteServiceButtonListener(ActionListener listener) {
+        this.DeleteServiceButton.addActionListener(listener);
+    }
+
+    public void setEditServiceButtonListener(ActionListener listener) {
+        this.editServiceButton.addActionListener(listener);
+    }
+    
+    public void setAddServiceButtonListener(ActionListener listener) {
+        this.addServiceButton.addActionListener(listener);
+    }
+    
+    public void setViewServiceButtonLisetner(ActionListener listener) {
+        this.viewServiceButton.addActionListener(listener);
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteServiceButton;
     private javax.swing.JButton addButton;
-    private javax.swing.JButton addButton1;
-    private javax.swing.JButton addButton2;
+    private javax.swing.JButton addServiceButton;
     private javax.swing.JLabel brandLabel;
     private javax.swing.JTextField brandTextField;
     private javax.swing.JButton cancelButton;
@@ -484,21 +508,21 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     private javax.swing.JLabel computerTypeLabel;
     private javax.swing.JPanel computersPanel;
     private javax.swing.JTable computersTable;
+    private javax.swing.JLabel contactLabel;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JButton deleteButton1;
     private javax.swing.JButton editButton;
-    private javax.swing.JButton editButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton editServiceButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel modelLabel;
     private javax.swing.JTextField modelTextField;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel serialNumberLabel;
     private javax.swing.JTextField serialNumberTextField;
+    private javax.swing.JLabel serviceForLabel;
     private javax.swing.JTabbedPane servicesTabbedPane;
+    private javax.swing.JTable servicesTable;
     private javax.swing.JScrollPane tableScrollPane;
+    private javax.swing.JButton viewServiceButton;
     // End of variables declaration//GEN-END:variables
 }
