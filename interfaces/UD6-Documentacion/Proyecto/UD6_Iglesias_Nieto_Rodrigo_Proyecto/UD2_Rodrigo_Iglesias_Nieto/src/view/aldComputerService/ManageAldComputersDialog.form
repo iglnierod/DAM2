@@ -314,20 +314,20 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="deleteButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="DeleteServiceButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="editButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="editServiceButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="addButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="addServiceButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="addButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="viewServiceButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="559" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="serviceForLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="contactLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -340,17 +340,17 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="serviceForLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="contactLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="228" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="editButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="deleteButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="addServiceButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="editServiceButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DeleteServiceButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="viewServiceButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="213" max="32767" attributes="0"/>
                   </Group>
@@ -358,7 +358,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="serviceForLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -366,7 +366,7 @@
                 <Property name="text" type="java.lang.String" value="Services for "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="contactLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -381,7 +381,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="servicesTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="0">
@@ -429,7 +429,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="deleteButton1">
+            <Component class="javax.swing.JButton" name="DeleteServiceButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="cc" type="rgb"/>
@@ -440,17 +440,17 @@
                 <Property name="text" type="java.lang.String" value="Delete"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="editButton1">
+            <Component class="javax.swing.JButton" name="editServiceButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="addButton1">
+            <Component class="javax.swing.JButton" name="addServiceButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="addButton2">
+            <Component class="javax.swing.JButton" name="viewServiceButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View"/>
               </Properties>

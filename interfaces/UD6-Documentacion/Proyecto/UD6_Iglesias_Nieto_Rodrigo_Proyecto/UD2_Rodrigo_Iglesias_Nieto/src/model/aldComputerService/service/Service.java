@@ -22,8 +22,7 @@ public class Service {
     private Timestamp serviceDate;
     private float price;
 
-    public Service() {
-    }
+    public Service() {}
 
     public Service(ServiceType serviceType, String description, String comments,
             Timestamp registerDate, String contact, int phoneContact, boolean repaired,
