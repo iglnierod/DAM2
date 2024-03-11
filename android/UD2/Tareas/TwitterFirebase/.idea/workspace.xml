@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="baa7db20-5365-4553-9d36-1e616934fd18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya_Release/TresEnRaya/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/TwitterApp.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/data/network/FirebaseService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/data/network/model/UserData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/di/DataModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/ui/core/Navigator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/ui/login/LoginScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/ui/login/LoginViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/twitterfirebase/ui/model/UserModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/androidTest/java/com/example/tresenraya/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/MainActivity_4.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/TresEnRayaApp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService_10.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService_5.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService_6.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService_7.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/FirebaseService_9.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/model/GameData.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/model/GameData_5.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/data/network/model/GameData_9.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/di/DataModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/di/DataModule_5.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/doc/DesarrolloApp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/core/Navigator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/core/Navigator_16.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/core/Navigator_4.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/core/Navigator_8.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_10.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_11.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_12.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_13.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_16.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_8.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameScreen_9.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_10.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_11.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_12.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_13.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_14.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_5.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/game/GameViewModel_9.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeScreen_15.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeScreen_2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeScreen_4.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeScreen_8.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_4.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_5.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_6.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_7.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/home/HomeViewModel_8.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/model/GameModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/model/GameModel_10.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/model/GameModel_11.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/model/GameModel_9.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/theme/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/theme/Color_15.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/theme/Theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/java/com/example/tresenraya/ui/theme/Type.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/drawable/applogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/app/src/test/java/com/example/tresenraya/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Explicaciones/TresEnRaya/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFirebase/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleFirebase/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFirebase/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleFirebase/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFirebase/app/src/main/java/com/iglnierod/simplefirebase/data/Person.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleFirebase/app/src/main/java/com/iglnierod/simplefirebase/data/Person.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFirebase/app/src/main/java/com/iglnierod/simplefirebase/ui/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleFirebase/app/src/main/java/com/iglnierod/simplefirebase/ui/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SimpleFirebase/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../SimpleFirebase/build.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\dam2_alu08\.android\avd\Pixel_5_API_34_2.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2dKAZtXmes2O3T8ZgzUV8JJBr7I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/dam2_alu08/DAM2/android/UD2/Tareas/Knoweats",
+    "settings.editor.selected.configurable": "editor.preferences.folding"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dam2_alu08\DAM2\android\UD2\Tareas\TwitterFirebase\app" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.twitterfirebase.ui.login" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.MainActivity">
+    <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" temporary="true">
+      <module name="TwitterFirebase.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.twitterfirebase.MainActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="TwitterFirebase.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android App.MainActivity" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baa7db20-5365-4553-9d36-1e616934fd18" name="Changes" comment="" />
+      <created>1709746454858</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709746454858</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
