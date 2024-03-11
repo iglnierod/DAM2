@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="499e4e6d-9090-4737-b0f1-288e6735a1fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../PSP_TareaHTTP/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PSP_TareaHTTP/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSP_TareaHTTP/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PSP_TareaHTTP/src/main/java/codigo_consola/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PSP_TareaHTTP/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PSP_TareaHTTP/src/main/java/codigo_consola/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tarea_12.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +50,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="SP_Tarea12" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="SP_Tarea12" />
@@ -66,6 +67,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
