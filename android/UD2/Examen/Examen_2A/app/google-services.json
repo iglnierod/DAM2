@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "361895995304",
+    "firebase_url": "https://examen2a-db8da-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "examen2a-db8da",
+    "storage_bucket": "examen2a-db8da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361895995304:android:d3442ba0d9e3e50b4d9f9d",
+        "android_client_info": {
+          "package_name": "com.example.examen_2a"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsKqkSS9rySmI-exOqtulCDKZtyaIMSG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
