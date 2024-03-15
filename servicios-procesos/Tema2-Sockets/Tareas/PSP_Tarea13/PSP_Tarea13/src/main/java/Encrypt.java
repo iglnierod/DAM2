@@ -6,17 +6,14 @@ public class Encrypt {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Pedir al usuario el mensaje y el salto
         System.out.print("Introduce el mensaje a encriptar: ");
         String mensaje = scanner.nextLine();
         System.out.print("Introduce el salto: ");
         int salto = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer
+        scanner.nextLine();
 
-        // Encriptar el mensaje
         String mensajeEncriptado = encriptarCesar(mensaje, salto);
 
-        // Guardar el mensaje en un archivo
         try {
             FileWriter writer = new FileWriter("mensaje_encriptado.txt");
             writer.write(mensajeEncriptado);
@@ -27,7 +24,6 @@ public class Encrypt {
         }
     }
 
-    // Función para encriptar el mensaje utilizando el cifrado César
     public static String encriptarCesar(String mensaje, int salto) {
         StringBuilder mensajeEncriptado = new StringBuilder();
         for (int i = 0; i < mensaje.length(); i++) {
